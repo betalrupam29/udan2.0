@@ -24,9 +24,9 @@ const faqs = [
 
 export function Rules() {
   return (
-    <section className="relative py-24 sm:py-32 text-white">
+    <section id="rules" className="relative py-24 sm:py-32 text-white">
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,37 +34,41 @@ export function Rules() {
           transition={{ duration: 0.6 }}
           className="text-center mx-auto max-w-3xl"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
-            <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
-            Rules & Guidelines
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold-light mb-4">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow-pulse" />
+            Official Guidelines
           </div>
-          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
-            The <span className="text-gradient-gold">fine print</span>, without the fine print.
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white tracking-tight">
+            Rules & <span className="text-gradient-gold">Guidelines</span>
           </h2>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="mt-12 rounded-3xl glass-dark border border-white/10 p-4 sm:p-6"
-        >
-          <Accordion type="single" collapsible className="w-full">
-            {rules.map((r, i) => (
-              <AccordionItem key={r.q} value={`r-${i}`} className="border-white/10">
-                <AccordionTrigger className="text-left text-white hover:no-underline">
-                  <span className="flex items-center gap-3">
-                    <span className="grid h-7 w-7 place-items-center rounded-md bg-gold/20 text-xs font-bold text-gold-light">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    {r.q}
+
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rules.map((r, i) => (
+            <motion.div
+              key={r.q}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className="group relative flex flex-col justify-between rounded-3xl glass-dark border border-white/10 p-6 sm:p-7 hover:border-gold/40 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 shadow-lg"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/20 text-sm font-bold text-gold-light border border-gold/30 group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                </AccordionTrigger>
-                <AccordionContent className="text-white/60 pl-10">{r.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-light transition-colors">
+                  {r.q}
+                </h3>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  {r.a}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

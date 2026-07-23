@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Monitor, Users, Download, ArrowRight } from "lucide-react";
-import { Countdown } from "./Countdown";
+import { Calendar, MapPin, Monitor, Users, Download } from "lucide-react";
 
 const info = [
   { icon: Calendar, label: "Date", value: "26–27 August 2026" },
@@ -68,13 +67,6 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Countdown */}
-        <div className="mx-auto mt-16 max-w-3xl">
-          <div className="text-center text-xs uppercase tracking-[0.3em] text-white/60 mb-4">
-            Countdown to Launch
-          </div>
-          <Countdown variant="dark" />
-        </div>
       </div>
 
     </section>
