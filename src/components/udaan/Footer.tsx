@@ -26,29 +26,6 @@ export function Footer() {
           <FooterCol title="Useful Links" links={useful} />
 
           <div>
-            <div className="text-xs uppercase tracking-[0.25em] text-gold-light">Newsletter</div>
-            <p className="mt-3 text-sm text-white/60">Get updates about UDAAN 2.0 announcements.</p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                // TODO: newsletter API
-                toast.success("Subscribed. Watch your inbox for updates.");
-                setEmail("");
-              }}
-              className="mt-4 flex gap-2"
-            >
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                className="w-full rounded-full bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold/60"
-              />
-              <button className="rounded-full gradient-gold px-4 py-2.5 text-sm font-semibold text-navy-deep shadow-gold-glow">
-                Join
-              </button>
-            </form>
             <div className="mt-6 text-xs uppercase tracking-[0.25em] text-gold-light">Contact</div>
             <div className="mt-2 text-sm text-white/70">iic-hitk@heritageit.edu</div>
           </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { LogoPlaceholder } from "./Logo";
+import { Logos } from "./Logo";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -35,11 +35,10 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-4">
-          <div className="flex items-center gap-3 shrink-0">
-            <LogoPlaceholder label="Logo 1" />
-            <LogoPlaceholder label="Logo 2" />
-          </div>
+        <div className="flex h-24 sm:h-28 items-center justify-between gap-4 py-2">
+          <a href="#home" className="shrink-0">
+            <Logos size="lg" />
+          </a>
 
           <nav className="hidden xl:flex items-center gap-1">
             {links.map((l) => (
