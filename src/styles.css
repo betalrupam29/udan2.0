@@ -57,9 +57,9 @@
   --skyblue: oklch(0.90 0.05 235);
   --mist: oklch(0.975 0.005 250);
 
-  --background: oklch(1 0 0);
+  --background: oklch(0.20 0.08 262);
   --foreground: oklch(0.20 0.05 260);
-  --card: oklch(0.985 0.004 250);
+  --card: oklch(0.24 0.07 260);
   --card-foreground: oklch(0.20 0.05 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.20 0.05 260);

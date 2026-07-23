@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SectionHeader } from "./Section";
 
 const rules = [
   { q: "Team Size", a: "Maximum 4 members per team. Cross-institution teams are permitted." },
@@ -25,31 +24,43 @@ const faqs = [
 
 export function Rules() {
   return (
-    <section className="relative py-24 sm:py-32 bg-mist">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Rules & Guidelines"
-          title={<>The <span className="text-gradient-navy">fine print</span>, without the fine print.</>}
-        />
+    <section className="relative py-24 sm:py-32 text-white">
+
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mx-auto max-w-3xl"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
+            <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
+            Rules & Guidelines
+          </div>
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
+            The <span className="text-gradient-gold">fine print</span>, without the fine print.
+          </h2>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="mt-12 rounded-3xl bg-white shadow-elegant border border-navy/5 p-4 sm:p-6"
+          className="mt-12 rounded-3xl glass-dark border border-white/10 p-4 sm:p-6"
         >
           <Accordion type="single" collapsible className="w-full">
             {rules.map((r, i) => (
-              <AccordionItem key={r.q} value={`r-${i}`} className="border-navy/10">
-                <AccordionTrigger className="text-left text-navy-deep hover:no-underline">
+              <AccordionItem key={r.q} value={`r-${i}`} className="border-white/10">
+                <AccordionTrigger className="text-left text-white hover:no-underline">
                   <span className="flex items-center gap-3">
-                    <span className="grid h-7 w-7 place-items-center rounded-md bg-gold/15 text-xs font-bold text-gold-deep">
+                    <span className="grid h-7 w-7 place-items-center rounded-md bg-gold/20 text-xs font-bold text-gold-light">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     {r.q}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-navy/70 pl-10">{r.a}</AccordionContent>
+                <AccordionContent className="text-white/60 pl-10">{r.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -61,24 +72,36 @@ export function Rules() {
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative py-24 sm:py-32 bg-white">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="FAQ"
-          title={<>Questions? <span className="text-gradient-gold">Answered.</span></>}
-        />
+    <section id="faq" className="relative py-24 sm:py-32 text-white">
+
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mx-auto max-w-3xl"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
+            <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
+            FAQ
+          </div>
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
+            Questions? <span className="text-gradient-gold">Answered.</span>
+          </h2>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="mt-12 rounded-3xl bg-card shadow-elegant border border-navy/5 p-4 sm:p-6"
+          className="mt-12 rounded-3xl glass-dark border border-white/10 p-4 sm:p-6"
         >
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`f-${i}`} className="border-navy/10">
-                <AccordionTrigger className="text-left text-navy-deep hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-navy/70">{f.a}</AccordionContent>
+              <AccordionItem key={f.q} value={`f-${i}`} className="border-white/10">
+                <AccordionTrigger className="text-left text-white hover:no-underline">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-white/60">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

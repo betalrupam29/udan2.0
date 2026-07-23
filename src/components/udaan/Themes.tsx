@@ -8,7 +8,6 @@ import {
   BrainCircuit,
   TrainFront,
 } from "lucide-react";
-import { SectionHeader } from "./Section";
 
 type Theme = {
   icon: typeof HeartPulse;
@@ -69,14 +68,27 @@ const themes: Theme[] = [
 
 export function Themes() {
   return (
-    <section id="themes" className="relative py-24 sm:py-32 bg-mist">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(11,42,91,0.05),transparent)]" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Tracks & Themes"
-          title={<>Seven themes. <span className="text-gradient-gold">Infinite possibilities.</span></>}
-          description="Every theme is mapped to the United Nations Sustainable Development Goals — build solutions that matter."
-        />
+    <section id="themes" className="relative py-24 sm:py-32 text-white">
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mx-auto max-w-3xl"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
+            <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
+            Tracks & Themes
+          </div>
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
+            Seven themes. <span className="text-gradient-gold">Infinite possibilities.</span>
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-white/70 leading-relaxed">
+            Every theme is mapped to the United Nations Sustainable Development Goals — build solutions that matter.
+          </p>
+        </motion.div>
 
         <div id="tracks" className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {themes.map((t, i) => (
@@ -87,30 +99,30 @@ export function Themes() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: (i % 3) * 0.08, duration: 0.55 }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-3xl bg-white p-7 shadow-elegant border border-navy/5 transition-all hover:shadow-[0_40px_80px_-30px_rgba(11,42,91,0.45)]"
+              className="group relative overflow-hidden rounded-3xl glass-dark p-7 border border-white/10 transition-all hover:shadow-[0_40px_80px_-30px_rgba(212,160,23,0.35)]"
             >
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative flex items-start justify-between">
                 <div className="inline-grid h-14 w-14 place-items-center rounded-2xl gradient-gold shadow-gold-glow">
                   <t.icon size={26} className="text-navy-deep" />
                 </div>
-                <span className="text-xs font-mono uppercase tracking-widest text-navy/40">
+                <span className="text-xs font-mono uppercase tracking-widest text-white/40">
                   Theme {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="relative mt-6 text-2xl font-semibold text-navy-deep leading-snug">
+              <h3 className="relative mt-6 text-2xl font-semibold text-white leading-snug">
                 {t.name}
               </h3>
 
               <div className="relative mt-5 flex flex-wrap gap-2">
                 {t.sdgs.map((s) => (
-                  <span key={s} className="inline-flex items-center rounded-full bg-navy/5 px-2.5 py-1 text-[11px] font-semibold text-navy">
+                  <span key={s} className="inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-gold-light">
                     {s}
                   </span>
                 ))}
               </div>
 
-              <ul className="relative mt-5 space-y-1.5 text-sm text-navy/70">
+              <ul className="relative mt-5 space-y-1.5 text-sm text-white/60">
                 {t.goals.map((g) => (
                   <li key={g} className="flex gap-2">
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" />

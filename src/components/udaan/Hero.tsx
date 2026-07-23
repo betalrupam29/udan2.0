@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Monitor, Users, Download, ArrowRight } from "lucide-react";
-import { Particles } from "./Particles";
 import { Countdown } from "./Countdown";
 
 const info = [
@@ -12,11 +11,7 @@ const info = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative isolate min-h-screen w-full overflow-hidden hero-radial text-white">
-      <Particles />
-      {/* Floating gold orbs */}
-      <div className="pointer-events-none absolute -top-20 -left-20 h-96 w-96 rounded-full bg-gold/20 blur-3xl animate-float-slow" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-skyblue/25 blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
+    <section id="home" className="relative isolate min-h-screen w-full text-white">
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 pb-16">
         <motion.div
@@ -82,8 +77,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* bottom fade */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
     </section>
   );
 }

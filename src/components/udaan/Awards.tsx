@@ -10,9 +10,7 @@ const prizes = [
 
 export function Awards() {
   return (
-    <section id="awards" className="relative py-24 sm:py-32 gradient-navy text-white overflow-hidden">
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[30rem] w-[30rem] rounded-full bg-gold/20 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-skyblue/10 blur-3xl" />
+    <section id="awards" className="relative py-24 sm:py-32 text-white">
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">

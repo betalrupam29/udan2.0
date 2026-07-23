@@ -31,7 +31,7 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white/85 backdrop-blur-xl shadow-[0_1px_20px_rgba(11,42,91,0.08)] border-b border-navy/5" : "bg-transparent"
+        scrolled ? "bg-navy-deep/85 backdrop-blur-xl shadow-[0_1px_20px_rgba(0,0,0,0.3)] border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  scrolled ? "text-navy/80 hover:text-navy hover:bg-navy/5" : "text-white/90 hover:text-white hover:bg-white/10"
+                  scrolled ? "text-white/80 hover:text-white hover:bg-white/10" : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {l.label}
@@ -60,7 +60,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
               className={`xl:hidden inline-flex items-center justify-center rounded-md p-2 ${
-                scrolled ? "text-navy hover:bg-navy/5" : "text-white hover:bg-white/10"
+                scrolled ? "text-white hover:bg-white/10" : "text-white hover:bg-white/10"
               }`}
             >
               {open ? <X size={22} /> : <Menu size={22} />}
@@ -76,7 +76,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="xl:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-navy/5"
+            className="xl:hidden overflow-hidden bg-navy-deep/95 backdrop-blur-xl border-t border-white/5"
           >
             <div className="mx-auto max-w-7xl px-6 py-4 grid grid-cols-2 gap-1">
               {links.map((l) => (
@@ -84,7 +84,7 @@ export function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-2.5 text-sm font-medium text-navy/80 rounded-md hover:bg-navy/5"
+                  className="px-3 py-2.5 text-sm font-medium text-white/80 rounded-md hover:bg-white/10"
                 >
                   {l.label}
                 </a>

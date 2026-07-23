@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/udaan/Navbar";
+import { Particles } from "@/components/udaan/Particles";
 import { Hero } from "@/components/udaan/Hero";
 import { About } from "@/components/udaan/About";
 import { Themes } from "@/components/udaan/Themes";
@@ -36,22 +37,33 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Themes />
-        <Details />
-        <ImportantDates />
-        <RegistrationGuidelines />
-        <Awards />
-        <Rules />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <Toaster position="top-center" richColors />
+    <div className="relative min-h-screen overflow-x-hidden hero-radial text-white">
+      {/* Global particles — one layer for the entire page */}
+      <Particles count={40} />
+
+      {/* Global floating orbs scattered down the page */}
+      <div className="pointer-events-none fixed -top-20 -left-20 h-96 w-96 rounded-full bg-gold/15 blur-3xl animate-float-slow" />
+      <div className="pointer-events-none fixed top-[30vh] right-0 h-[28rem] w-[28rem] rounded-full bg-skyblue/15 blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
+      <div className="pointer-events-none fixed top-[60vh] -left-10 h-80 w-80 rounded-full bg-gold/10 blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
+      <div className="pointer-events-none fixed bottom-[10vh] right-10 h-96 w-96 rounded-full bg-skyblue/10 blur-3xl animate-float-slow" style={{ animationDelay: "6s" }} />
+
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Themes />
+          <Details />
+          <ImportantDates />
+          <RegistrationGuidelines />
+          <Awards />
+          <Rules />
+          <FAQ />
+          <Contact />
+        </main>
+        <Footer />
+        <Toaster position="top-center" richColors />
+      </div>
     </div>
   );
 }

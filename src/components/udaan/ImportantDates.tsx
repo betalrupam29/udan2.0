@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
-import { SectionHeader } from "./Section";
 
 const dates = [
   {
@@ -35,27 +34,42 @@ const dates = [
 
 export function ImportantDates() {
   return (
-    <section id="dates" className="relative py-24 sm:py-32 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Important Dates"
-          title={<>Mark your <span className="text-gradient-gold">calendars</span>.</>}
-          description="Keep track of all the important deadlines and event dates."
-        />
+    <section id="dates" className="relative py-24 sm:py-32 text-white">
+
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mx-auto max-w-3xl"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
+            <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
+            Important Dates
+          </div>
+          <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
+            Mark your <span className="text-gradient-gold">calendars</span>.
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-white/70 leading-relaxed">
+            Keep track of all the important deadlines and event dates.
+          </p>
+        </motion.div>
 
         <div className="mt-16 overflow-x-auto pb-4">
-          <div className="min-w-[900px] rounded-3xl border border-navy/5 bg-white shadow-elegant overflow-hidden">
+          <div className="min-w-[900px] rounded-3xl border border-white/10 glass-dark overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-mist border-b border-navy/5">
-                  <th className="py-5 px-6 font-semibold text-navy-deep text-sm">Event</th>
-                  <th className="py-5 px-6 font-semibold text-navy-deep text-sm">Date</th>
-                  <th className="py-5 px-6 font-semibold text-navy-deep text-sm">Time</th>
-                  <th className="py-5 px-6 font-semibold text-navy-deep text-sm">Location</th>
-                  <th className="py-5 px-6 font-semibold text-navy-deep text-sm">Description</th>
+                <tr className="bg-white/5 border-b border-white/10">
+                  <th className="py-5 px-6 font-semibold text-gold-light text-sm">Event</th>
+                  <th className="py-5 px-6 font-semibold text-gold-light text-sm">Date</th>
+                  <th className="py-5 px-6 font-semibold text-gold-light text-sm">Time</th>
+                  <th className="py-5 px-6 font-semibold text-gold-light text-sm">Location</th>
+                  <th className="py-5 px-6 font-semibold text-gold-light text-sm">Description</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-navy/5">
+              <tbody className="divide-y divide-white/5">
                 {dates.map((d, i) => (
                   <motion.tr
                     key={d.event}
@@ -63,30 +77,30 @@ export function ImportantDates() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.4 }}
-                    className="hover:bg-mist/50 transition-colors group"
+                    className="hover:bg-white/5 transition-colors group"
                   >
-                    <td className="py-5 px-6 font-bold text-navy-deep group-hover:text-gold-deep transition-colors">
+                    <td className="py-5 px-6 font-bold text-white group-hover:text-gold-light transition-colors">
                       {d.event}
                     </td>
-                    <td className="py-5 px-6 text-sm text-navy/80">
+                    <td className="py-5 px-6 text-sm text-white/80">
                       <div className="flex items-center gap-2">
-                        <Calendar size={16} className="text-blue-500" />
+                        <Calendar size={16} className="text-blue-400" />
                         {d.date}
                       </div>
                     </td>
-                    <td className="py-5 px-6 text-sm text-navy/80">
+                    <td className="py-5 px-6 text-sm text-white/80">
                       <div className="flex items-center gap-2">
-                        <Clock size={16} className="text-green-500" />
+                        <Clock size={16} className="text-green-400" />
                         {d.time}
                       </div>
                     </td>
-                    <td className="py-5 px-6 text-sm text-navy/80">
+                    <td className="py-5 px-6 text-sm text-white/80">
                       <div className="flex items-center gap-2">
-                        <MapPin size={16} className="text-orange-500" />
+                        <MapPin size={16} className="text-orange-400" />
                         {d.location}
                       </div>
                     </td>
-                    <td className="py-5 px-6 text-sm text-navy/70">
+                    <td className="py-5 px-6 text-sm text-white/60">
                       {d.description}
                     </td>
                   </motion.tr>
