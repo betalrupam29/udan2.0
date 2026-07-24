@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Monitor, Users, Download } from "lucide-react";
+import PaymentRegister from "./PaymentRegister";
 
 const info = [
   { icon: Calendar, label: "Date", value: "26–27 August 2026" },
@@ -29,38 +30,7 @@ export function Hero() {
             <span className="block text-gradient-gold">2.0</span>
           </h1>
 
-          <button
-  onClick={() => window.open("https://google.com", "_blank", "noopener,noreferrer")}
-  className="
-    relative
-    mt-8
-    overflow-hidden
-    rounded-xl
-    bg-gradient-to-r from-yellow-400 to-amber-500
-    px-10 py-4
-    text-2xl md:text-3xl
-    font-extrabold
-    text-blue-950
-    shadow-lg
-    transition-all
-    duration-300
-    hover:scale-105
-    hover:shadow-[0_0_45px_rgba(253,224,71,0.8)]
-    before:absolute
-    before:inset-0
-    before:-translate-x-full
-    before:bg-gradient-to-r
-    before:from-transparent
-    before:via-white/40
-    before:to-transparent
-    before:transition-transform
-    before:duration-700
-    hover:before:translate-x-full
-  "
->
-  Register Now →
-</button>
-
+         <PaymentRegister />
           <p className="mt-6 text-xl sm:text-2xl md:text-3xl font-light text-white/90">
             From <em className="text-gradient-gold not-italic font-medium">Grounded Ideas</em> to Sky-High Impact
           </p>
