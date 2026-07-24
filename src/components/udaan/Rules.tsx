@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const rules = [
-  { q: "Team Size", a: "Maximum 4 members per team. Cross-institution teams are permitted." },
+  { q: "Team Size", a: "Maximum 3 members per team. Cross-institution teams are permitted." },
   { q: "Registration", a: "Registration is mandatory for every participant on the team." },
   { q: "External Registration Fee", a: "External teams pay ₹500 per team at the time of registration." },
   { q: "Official T-Shirt", a: "Optional UDAAN 2.0 event T-shirt available at ₹400 per member." },

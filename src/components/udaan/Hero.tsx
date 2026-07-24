@@ -5,7 +5,7 @@ const info = [
   { icon: Calendar, label: "Date", value: "26–27 August 2026" },
   { icon: MapPin, label: "Venue", value: "Executive Hall, HITK, Kolkata" },
   { icon: Monitor, label: "Mode", value: "Offline" },
-  { icon: Users, label: "Teams", value: "30 · Max 4 members" },
+  { icon: Users, label: "Teams", value: "30 · Max 3 members" },
 ];
 
 export function Hero() {

@@ -1,4 +1,4 @@
-import { LogoPlaceholder } from "./Logo";
+import { Logos } from "./Logo";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -8,13 +8,12 @@ const useful = ["Guidelines", "FAQ", "Contact"];
 export function Footer() {
   const [email, setEmail] = useState("");
   return (
-    <footer className="relative gradient-navy text-white/85">
+    <footer className="relative bg-[#060D21] border-t border-white/10 text-white/85">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <LogoPlaceholder label="Logo 1" variant="dark" />
-              <LogoPlaceholder label="Logo 2" variant="dark" />
+              <Logos size="md" />
             </div>
             <div className="mt-5 font-display text-2xl font-bold text-white">UDAAN 2.0</div>
             <p className="mt-2 text-sm text-white/60 max-w-xs">
