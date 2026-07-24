@@ -150,11 +150,19 @@
     radial-gradient(50% 50% at 85% 15%, color-mix(in oklab, var(--skyblue) 45%, transparent), transparent 65%),
     radial-gradient(80% 60% at 50% 100%, color-mix(in oklab, var(--navy-light) 55%, transparent), transparent 70%),
     linear-gradient(135deg, var(--navy-deep), var(--navy));
+  background-size: 160% 160%;
+  animation: bg-gradient-shift 16s ease-in-out infinite alternate;
+}
+
+@keyframes bg-gradient-shift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 50% 100%; }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(-24px) translateX(10px); }
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-30px) translateX(15px) scale(1.05); }
 }
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -165,5 +173,5 @@
   50% { box-shadow: 0 0 40px 8px color-mix(in oklab, var(--gold) 30%, transparent); }
 }
 
-@utility animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+@utility animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
 @utility animate-glow-pulse { animation: glow-pulse 2.8s ease-in-out infinite; }

@@ -44,7 +44,6 @@ export function Contact() {
             <h3 className="text-xl font-bold mb-3 text-gold-light">Support Hours</h3>
             <div className="text-white/70 text-sm sm:text-base space-y-1">
               <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p>Saturday: 10:00 AM - 4:00 PM</p>
             </div>
           </div>
         </motion.div>

@@ -16,7 +16,7 @@ export function Particles({ count = 22 }: { count?: number }) {
     [count],
   );
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
       {items.map((p) => (
         <motion.span
           key={p.id}

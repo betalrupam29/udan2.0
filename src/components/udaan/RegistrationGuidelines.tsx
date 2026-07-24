@@ -10,8 +10,7 @@ const guidelines = [
     items: [
       "Each team can have a maximum of 3 student members and 1 mentor",
       "Open to all undergraduate and postgraduate students",
-      "Free for HITK students",
-      "₹500 per team for external participants",
+      "₹500 per team for all participants",
       "Registration: 7th August 2026 - 17th August 2026",
     ],
   },
@@ -34,8 +33,8 @@ const guidelines = [
     iconColor: "text-green-400",
     bgColor: "bg-green-500/20",
     items: [
+       "Keep the Payment deteils after sucessful payment",
       "You'll receive a confirmation email if shortlisted",
-      "Payment details (if external participant)",
       "Competition updates and announcements",
     ],
   },
