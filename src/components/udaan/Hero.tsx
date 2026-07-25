@@ -40,15 +40,7 @@ export function Hero() {
             Institution's Innovation Council (IIC), Heritage Institute of Technology, Kolkata.
           </p>
 
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="#" // TODO: link brochure PDF
-              className="inline-flex items-center gap-2 rounded-full glass-dark px-7 py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white/15 transition-colors"
-            >
-              <Download size={18} />
-              Download Brochure
-            </a>
-          </div>
+          
         </motion.div>
 
         {/* Info pills */}

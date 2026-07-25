@@ -15,6 +15,10 @@ import {
   ChevronDown,
   GraduationCap,
   UserCog,
+  Download,
+  Crown,
+  Star,
+  Shield,
 } from "lucide-react";
 import { Logos } from "./Logo";
 
@@ -25,6 +29,7 @@ const links = [
   { href: "#dates", label: "Important Dates", icon: Calendar },
   { href: "#guidelines", label: "Rules & Guidelines", icon: FileText },
   { href: "#awards", label: "Awards", icon: Trophy },
+  { href: "#download", label: "Download", icon: Download },
   { href: "#faq", label: "FAQ", icon: HelpCircle },
   { href: "#contact", label: "Contact", icon: Mail },
 ];
@@ -54,15 +59,14 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 sm:h-24 items-center justify-between">
 
-          {/* Logo */}
-          <a href="#home">
+          <a href="#home" className="shrink-0">
             <Logos size="lg" whiteBg={true} />
           </a>
 
           {/* Desktop Navbar */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1 min-w-0">
 
-            {links.slice(0, 6).map((link) => {
+            {links.slice(0, 7).map((link) => {
               const Icon = link.icon;
 
               return (
@@ -108,32 +112,31 @@ export function Navbar() {
                   z-50
                 "
               >
-                <a
-                  href="#students"
-                  className="flex items-center gap-3 px-5 py-4 hover:bg-black/5"
-                >
-                  <GraduationCap
-                    size={18}
-                    className="text-blue-600"
-                  />
-                  Students
+                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5 rounded-t-2xl">
+                  <Crown size={17} className="text-amber-500" />
+                  <span className="text-sm font-semibold">Chief Patron</span>
                 </a>
-
-                <a
-                  href="#faculty"
-                  className="flex items-center gap-3 px-5 py-4 hover:bg-black/5"
-                >
-                  <UserCog
-                    size={18}
-                    className="text-green-600"
-                  />
-                  Faculty
+                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                  <Star size={17} className="text-violet-500" />
+                  <span className="text-sm font-semibold">Patrons</span>
+                </a>
+                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                  <Shield size={17} className="text-teal-500" />
+                  <span className="text-sm font-semibold">Advisory</span>
+                </a>
+                <a href="#faculty" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                  <UserCog size={17} className="text-green-600" />
+                  <span className="text-sm font-semibold">Faculty</span>
+                </a>
+                <a href="#students" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5 rounded-b-2xl">
+                  <GraduationCap size={17} className="text-blue-500" />
+                  <span className="text-sm font-semibold">Students</span>
                 </a>
               </div>
 
             </div>
 
-            {links.slice(6).map((link) => {
+            {links.slice(7).map((link) => {
               const Icon = link.icon;
 
               return (
@@ -172,7 +175,7 @@ export function Navbar() {
           >
             <div className="px-6 py-4">
 
-              {links.slice(0, 6).map((link) => {
+              {links.slice(0, 7).map((link) => {
                 const Icon = link.icon;
 
                 return (
@@ -215,34 +218,31 @@ export function Navbar() {
                     exit={{ height: 0, opacity: 0 }}
                     className="ml-8 overflow-hidden"
                   >
-                    <a
-                      href="#students"
-                      onClick={() => setOpen(false)}
-                      className="flex items-center gap-3 py-3"
-                    >
-                      <GraduationCap
-                        size={18}
-                        className="text-blue-600"
-                      />
-                      Students
+                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                      <Crown size={17} className="text-amber-500" />
+                      <span className="text-sm font-semibold">Chief Patron</span>
                     </a>
-
-                    <a
-                      href="#faculty"
-                      onClick={() => setOpen(false)}
-                      className="flex items-center gap-3 py-3"
-                    >
-                      <UserCog
-                        size={18}
-                        className="text-green-600"
-                      />
-                      Faculty
+                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                      <Star size={17} className="text-violet-500" />
+                      <span className="text-sm font-semibold">Patrons</span>
+                    </a>
+                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                      <Shield size={17} className="text-teal-500" />
+                      <span className="text-sm font-semibold">Advisory</span>
+                    </a>
+                    <a href="#faculty" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                      <UserCog size={17} className="text-green-600" />
+                      <span className="text-sm font-semibold">Faculty</span>
+                    </a>
+                    <a href="#students" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                      <GraduationCap size={17} className="text-blue-500" />
+                      <span className="text-sm font-semibold">Students</span>
                     </a>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {links.slice(6).map((link) => {
+              {links.slice(7).map((link) => {
                 const Icon = link.icon;
 
                 return (

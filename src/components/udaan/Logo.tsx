@@ -1,6 +1,6 @@
 export function Logos({ size = "md", whiteBg = true }: { size?: "sm" | "md" | "lg"; whiteBg?: boolean }) {
   const heightCls =
-    size === "lg" ? "h-10 sm:h-12 md:h-14" : size === "sm" ? "h-7 sm:h-9" : "h-9 sm:h-11";
+    size === "lg" ? "h-12 sm:h-14" : size === "sm" ? "h-7 sm:h-9" : "h-9 sm:h-11";
 
   return (
     <div className={`shrink-0 flex items-center gap-2.5 sm:gap-3.5 ${whiteBg ? "bg-white p-2 px-3.5 rounded-2xl shadow-md border border-slate-200/90" : ""}`}>

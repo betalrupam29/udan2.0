@@ -9,6 +9,7 @@ import { Details } from "@/components/udaan/Details";
 import { Awards } from "@/components/udaan/Awards";
 import { ImportantDates } from "@/components/udaan/ImportantDates";
 import { RegistrationGuidelines } from "@/components/udaan/RegistrationGuidelines";
+import { DownloadSection } from "@/components/udaan/DownloadSection";
 import { Rules, FAQ } from "@/components/udaan/Rules";
 import { Contact } from "@/components/udaan/Contact";
 import { Members } from "@/components/udaan/Members";
@@ -57,6 +58,7 @@ function Index() {
           <Details />
           <ImportantDates />
           <RegistrationGuidelines />
+          <DownloadSection />
           <Awards />
           <Members />
           <Rules />
