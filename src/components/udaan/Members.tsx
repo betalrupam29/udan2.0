@@ -17,9 +17,9 @@ const students = [
 const faculty = [
   { name: "Rituparna Sinha", dept: "Information Technology" },
   { name: "Nandan Kumar Jana", dept: "Biotechnology" },
-  { name: "Avijit Ghosh", dept: "Information Technology" },
-  { name: "Puja Basu Chaudhuri", dept: "Information Technology" },
-  { name: "Nabamita Banerjee Roy", dept: "Information Technology" },
+  { name: "Avijit Ghosh", dept: "Chemical Engineering" },
+  { name: "Puja Basu Chaudhuri", dept: "Civil Engineering" },
+  { name: "Nabamita Banerjee Roy", dept: "Associate professor" },
   { name: "Pramita Sen", dept: "Information Technology" },
   { name: "Deep Malya Mukhopadhyay", dept: "Information Technology" },
   { name: "Santanu Roy", dept: "Information Technology" },
