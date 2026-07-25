@@ -14,12 +14,10 @@ export default function PaymentRegister() {
   const [step, setStep] = useState(1);
   const [checked, setChecked] = useState(false);
 
-  // ===========================
-  // CHANGE THESE LINKS
-  // ===========================
+ 
   const PAYMENT_LINK = "https://your-payment-link.com";
-  const GOOGLE_FORM = "https://forms.gle/your-google-form";
-  // ===========================
+  const GOOGLE_FORM = "https://forms.gle/cUNLDUxD4YeBbxUNA";
+  
 
   const close = () => {
     setOpen(false);
