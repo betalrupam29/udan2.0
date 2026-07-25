@@ -11,6 +11,10 @@ import {
   Trophy,
   HelpCircle,
   Mail,
+  Users,
+  ChevronDown,
+  GraduationCap,
+  UserCog,
 } from "lucide-react";
 import { Logos } from "./Logo";
 
@@ -28,11 +32,13 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [memberOpen, setMemberOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -40,69 +46,218 @@ export function Navbar() {
     <motion.header
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-[#EAD8B7] border-b-2 border-[#1E293B] ${
+      transition={{ duration: 0.5 }}
+      className={`fixed inset-x-0 top-0 z-50 bg-[#EAD8B7] border-b-2 border-[#1E293B] transition-all ${
         scrolled ? "shadow-lg" : "shadow-sm"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 sm:h-24 items-center justify-between gap-4 py-2">
-          <a href="#home" className="shrink-0">
+        <div className="flex h-20 sm:h-24 items-center justify-between">
+
+          {/* Logo */}
+          <a href="#home">
             <Logos size="lg" whiteBg={true} />
           </a>
 
-          <nav className="hidden xl:flex items-center gap-1.5">
-            {links.map((l) => {
-              const Icon = l.icon;
+          {/* Desktop Navbar */}
+          <nav className="hidden xl:flex items-center gap-1">
+
+            {links.slice(0, 6).map((link) => {
+              const Icon = link.icon;
+
               return (
                 <a
-                  key={l.href}
-                  href={l.href}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-[#0F172A] rounded-md transition-colors hover:bg-black/5 hover:text-[#0A1128]"
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
                 >
-                  <Icon className="w-4 h-4 text-[#0F172A]/80 shrink-0" />
-                  <span>{l.label}</span>
+                  <Icon size={16} />
+                  {link.label}
+                </a>
+              );
+            })}
+
+            {/* Members Dropdown */}
+            <div className="relative group">
+
+              <button
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
+              >
+                <Users size={16} />
+                Members
+                <ChevronDown
+                  size={16}
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                />
+              </button>
+
+              <div
+                className="
+                  invisible opacity-0 translate-y-3
+                  group-hover:visible
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  absolute top-full left-0 mt-2
+                  w-56
+                  rounded-2xl
+                  border border-black/10
+                  bg-[#EAD8B7]
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  z-50
+                "
+              >
+                <a
+                  href="#students"
+                  className="flex items-center gap-3 px-5 py-4 hover:bg-black/5"
+                >
+                  <GraduationCap
+                    size={18}
+                    className="text-blue-600"
+                  />
+                  Students
+                </a>
+
+                <a
+                  href="#faculty"
+                  className="flex items-center gap-3 px-5 py-4 hover:bg-black/5"
+                >
+                  <UserCog
+                    size={18}
+                    className="text-green-600"
+                  />
+                  Faculty
+                </a>
+              </div>
+
+            </div>
+
+            {links.slice(6).map((link) => {
+              const Icon = link.icon;
+
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
+                >
+                  <Icon size={16} />
+                  {link.label}
                 </a>
               );
             })}
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              onClick={() => setOpen((v) => !v)}
-              aria-label="Menu"
-              className="xl:hidden inline-flex items-center justify-center rounded-md p-2 text-[#0F172A] hover:bg-black/10"
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="xl:hidden p-2 rounded-md"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
         </div>
       </div>
+
+      {/* Mobile Menu */}
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="xl:hidden overflow-hidden bg-[#EAD8B7] border-t border-slate-800/20"
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            className="xl:hidden overflow-hidden bg-[#EAD8B7] border-t"
           >
-            <div className="mx-auto max-w-7xl px-6 py-4 grid grid-cols-2 gap-1">
-              {links.map((l) => {
-                const Icon = l.icon;
+            <div className="px-6 py-4">
+
+              {links.slice(0, 6).map((link) => {
+                const Icon = link.icon;
+
                 return (
                   <a
-                    key={l.href}
-                    href={l.href}
+                    key={link.href}
+                    href={link.href}
                     onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-2 px-3 py-2.5 text-sm font-semibold text-[#0F172A] rounded-md hover:bg-black/10"
+                    className="flex items-center gap-3 py-3"
                   >
-                    <Icon className="w-4 h-4 text-[#0F172A]/80 shrink-0" />
-                    <span>{l.label}</span>
+                    <Icon size={18} />
+                    {link.label}
                   </a>
                 );
               })}
+
+              {/* Mobile Members */}
+
+              <button
+                onClick={() => setMemberOpen(!memberOpen)}
+                className="flex justify-between items-center w-full py-3"
+              >
+                <span className="flex items-center gap-3">
+                  <Users size={18} />
+                  Members
+                </span>
+
+                <ChevronDown
+                  size={18}
+                  className={`transition ${
+                    memberOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {memberOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="ml-8 overflow-hidden"
+                  >
+                    <a
+                      href="#students"
+                      onClick={() => setOpen(false)}
+                      className="flex items-center gap-3 py-3"
+                    >
+                      <GraduationCap
+                        size={18}
+                        className="text-blue-600"
+                      />
+                      Students
+                    </a>
+
+                    <a
+                      href="#faculty"
+                      onClick={() => setOpen(false)}
+                      className="flex items-center gap-3 py-3"
+                    >
+                      <UserCog
+                        size={18}
+                        className="text-green-600"
+                      />
+                      Faculty
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {links.slice(6).map((link) => {
+                const Icon = link.icon;
+
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 py-3"
+                  >
+                    <Icon size={18} />
+                    {link.label}
+                  </a>
+                );
+              })}
+
             </div>
           </motion.div>
         )}

@@ -11,6 +11,7 @@ import { ImportantDates } from "@/components/udaan/ImportantDates";
 import { RegistrationGuidelines } from "@/components/udaan/RegistrationGuidelines";
 import { Rules, FAQ } from "@/components/udaan/Rules";
 import { Contact } from "@/components/udaan/Contact";
+import { Members } from "@/components/udaan/Members";
 import { Footer } from "@/components/udaan/Footer";
 
 export const Route = createFileRoute("/")({
@@ -57,6 +58,7 @@ function Index() {
           <ImportantDates />
           <RegistrationGuidelines />
           <Awards />
+          <Members />
           <Rules />
           <FAQ />
           <Contact />
