@@ -44,31 +44,75 @@ export function Rules() {
         </motion.div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rules.map((r, i) => (
-            <motion.div
-              key={r.q}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative flex flex-col justify-between rounded-3xl glass-dark border border-white/10 p-6 sm:p-7 hover:border-gold/40 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 shadow-lg"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/20 text-sm font-bold text-gold-light border border-gold/30 group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-light transition-colors">
-                  {r.q}
-                </h3>
-                <p className="text-sm text-white/70 leading-relaxed">
-                  {r.a}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+  {rules.map((r, i) => (
+    <motion.div
+      key={r.q}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: i * 0.05 }}
+      className="
+        group
+        relative
+        overflow-hidden
+        rounded-2xl
+        border
+        border-white/10
+        bg-gradient-to-br
+        from-white/[0.03]
+        via-white/[0.015]
+        to-transparent
+        backdrop-blur-md
+        p-6
+        sm:p-7
+        transition-all
+        duration-300
+        hover:-translate-y-2
+        hover:border-gold/40
+        hover:from-white/[0.06]
+        hover:via-white/[0.03]
+        hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)]
+      "
+    >
+      <div>
+        <div className="flex items-center justify-between gap-4 mb-5">
+          <span
+            className="
+              grid
+            h-12
+            w-12
+            place-items-center
+            rounded-full
+            border
+            border-gold/30
+            bg-gold/15
+            text-base
+            font-bold
+            text-gold-light
+            transition-all
+            duration-300
+            group-hover:bg-green-500
+            group-hover:border-green-400
+            group-hover:text-white
+            group-hover:shadow-lg
+            group-hover:shadow-green-500/30
+            "
+          >
+            {String(i + 1).padStart(2, "0")}
+          </span>
         </div>
+
+        <h3 className="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-gold-light">
+          {r.q}
+        </h3>
+
+        <p className="text-sm leading-7 text-white/70">
+          {r.a}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );
