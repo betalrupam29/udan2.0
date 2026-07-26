@@ -11,7 +11,7 @@ const cards = [
     label: "Event Brochure",
     title: "Download Brochure",
     description:
-      "Get the official UDAAN 2.0 brochure with event overview, tracks, rules, registration flow, and key dates — all in one place.",
+      "Get the official UDAAN 2.0 brochure with event overview.",
     buttonText: "Download Brochure",
     buttonClass:
       "bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 hover:border-amber-400/60 text-amber-300",
