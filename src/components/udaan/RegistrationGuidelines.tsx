@@ -10,7 +10,7 @@ const guidelines = [
     items: [
       "Each team can have a maximum of 3 student members and 1 mentor",
       "Open to all undergraduate and postgraduate students",
-      "₹500 per team for all participants",
+      "₹500 per team",
       "Registration: 7th August 2026 - 17th August 2026",
     ],
   },
