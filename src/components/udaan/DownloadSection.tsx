@@ -27,7 +27,7 @@ const cards = [
     label: "Theme Details",
     title: "Download Theme Guide",
     description:
-      "Explore the SDG mapping document covering all hackathon themes, problem statements, evaluation criteria, and submission guidelines.",
+      "Explore the SDG mapping document covering all hackathon themes.",
     buttonText: "Download Theme PDF",
     buttonClass:
       "bg-sky-400/10 hover:bg-sky-400/20 border border-sky-400/30 hover:border-sky-400/60 text-sky-300",
