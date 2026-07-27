@@ -112,23 +112,23 @@ export function Navbar() {
                   z-50
                 "
               >
-                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5 rounded-t-2xl">
+                <a href="#chief" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5 rounded-t-2xl">
                   <Crown size={17} className="text-amber-500" />
                   <span className="text-sm font-semibold">Chief Patron</span>
                 </a>
-                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                <a href="#patrons" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
                   <Star size={17} className="text-violet-500" />
                   <span className="text-sm font-semibold">Patrons</span>
                 </a>
-                <a href="#members" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                <a href="#advisory" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
                   <Shield size={17} className="text-teal-500" />
                   <span className="text-sm font-semibold">Advisory</span>
                 </a>
-                <a href="#faculty" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5">
+                <a href="#faculty" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
                   <UserCog size={17} className="text-green-600" />
                   <span className="text-sm font-semibold">Faculty</span>
                 </a>
-                <a href="#students" className="flex items-center gap-3 px-5 py-3.5 hover:bg-black/5 rounded-b-2xl">
+                <a href="#students" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5 rounded-b-2xl">
                   <GraduationCap size={17} className="text-blue-500" />
                   <span className="text-sm font-semibold">Students</span>
                 </a>
@@ -183,7 +183,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-3 py-3"
+                    className="flex items-center gap-3 py-3 text-black"
                   >
                     <Icon size={18} />
                     {link.label}
@@ -195,7 +195,7 @@ export function Navbar() {
 
               <button
                 onClick={() => setMemberOpen(!memberOpen)}
-                className="flex justify-between items-center w-full py-3"
+                className="flex justify-between items-center w-full py-3 text-black"
               >
                 <span className="flex items-center gap-3">
                   <Users size={18} />
@@ -218,23 +218,23 @@ export function Navbar() {
                     exit={{ height: 0, opacity: 0 }}
                     className="ml-8 overflow-hidden"
                   >
-                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                    <a href="#chief" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <Crown size={17} className="text-amber-500" />
                       <span className="text-sm font-semibold">Chief Patron</span>
                     </a>
-                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                    <a href="#patrons" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <Star size={17} className="text-violet-500" />
                       <span className="text-sm font-semibold">Patrons</span>
                     </a>
-                    <a href="#members" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                    <a href="#advisory" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <Shield size={17} className="text-teal-500" />
                       <span className="text-sm font-semibold">Advisory</span>
                     </a>
-                    <a href="#faculty" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                    <a href="#faculty" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <UserCog size={17} className="text-green-600" />
                       <span className="text-sm font-semibold">Faculty</span>
                     </a>
-                    <a href="#students" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5">
+                    <a href="#students" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <GraduationCap size={17} className="text-blue-500" />
                       <span className="text-sm font-semibold">Students</span>
                     </a>
@@ -250,7 +250,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center gap-3 py-3"
+                    className="flex items-center gap-3 py-3 text-black"
                   >
                     <Icon size={18} />
                     {link.label}

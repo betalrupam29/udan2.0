@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Crown, Star, Shield, GraduationCap, UserCog } from "lucide-react";
 
@@ -78,6 +78,14 @@ const dataMap: Record<string, { name: string; role: string }[]> = {
   students,
 };
 
+const hashToTab: Record<string, keyof typeof dataMap> = {
+  chief: "chief",
+  patrons: "patrons",
+  advisory: "advisory",
+  faculty: "faculty",
+  students: "students",
+};
+
 function MemberCard({
   person,
   index,
@@ -116,6 +124,27 @@ export function Members() {
   const tab = tabs.find((t) => t.id === activeTab)!;
   const members = dataMap[activeTab];
 
+  useEffect(() => {
+    const syncTabFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      const nextTab = hashToTab[hash];
+
+      if (nextTab) {
+        setActiveTab(nextTab);
+      }
+    };
+
+    syncTabFromHash();
+    window.addEventListener("hashchange", syncTabFromHash);
+
+    return () => window.removeEventListener("hashchange", syncTabFromHash);
+  }, []);
+
+  const handleTabClick = (nextTab: keyof typeof dataMap) => {
+    setActiveTab(nextTab);
+    window.history.replaceState(null, "", `#${nextTab}`);
+  };
+
   return (
     <section id="members" className="relative py-24 sm:py-32 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -149,7 +178,7 @@ export function Members() {
             return (
               <button
                 key={t.id}
-                onClick={() => setActiveTab(t.id)}
+                onClick={() => handleTabClick(t.id)}
                 className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-200 ${
                   isActive
                     ? `${t.activeBg} ${t.border} ${t.color} shadow-lg`
@@ -190,6 +219,9 @@ export function Members() {
         </AnimatePresence>
 
         {/* Hidden anchors for navbar dropdown links */}
+        <span id="chief" className="sr-only" />
+        <span id="patrons" className="sr-only" />
+        <span id="advisory" className="sr-only" />
         <span id="faculty" className="sr-only" />
         <span id="students" className="sr-only" />
 

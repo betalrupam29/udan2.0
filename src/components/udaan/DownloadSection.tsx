@@ -15,8 +15,8 @@ const cards = [
     buttonText: "Download Brochure",
     buttonClass:
       "bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 hover:border-amber-400/60 text-amber-300",
-    href: "/documents/brochure.jpeg",
-    download: "UDAAN2_Brochure.jpeg",
+    href: "/documents/brochure.pdf",
+    download: "UDAAN2_Brochure.pdf",
   },
   {
     id: "tracks",
