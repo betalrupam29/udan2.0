@@ -4,21 +4,21 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 const dates = [
   {
     event: "Submission Opens",
-    date: "August 7, 2026",
+    date: "July 28, 2026",
     time: "9:00 AM",
     location: "Online Portal",
     description: "Team registration portal goes live",
   },
   {
     event: "Submission Deadline",
-    date: "August 17, 2026",
+    date: "August 16, 2026",
     time: "11:59 PM",
     location: "Online Portal",
     description: "Last date for team registration",
   },
   {
     event: "Submission Shortlisting Notification",
-    date: "August 23, 2026",
+    date: "August 20, 2026",
     time: "To be notified via email",
     location: "Online Portal",
     description: "Shortlisted teams will be notified via email",
