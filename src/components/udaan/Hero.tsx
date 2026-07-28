@@ -25,10 +25,26 @@ export function Hero() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-4xl text-center"
         >
-        <span className="inline-flex items-center gap-3 rounded-full glass-dark px-6 py-3 text-sm sm:text-lg md:text-xl font-bold text-gold-light border border-gold/40 shadow-gold-glow">
-  <span className="h-3 w-3 rounded-full bg-gold animate-glow-pulse" />
-  National Level • IIC • Heritage Institute of Technology
-</span>
+<div className="space-y-4 text-center">
+  {/* Largest: Main Heading */}
+  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">
+    Heritage Institute of Technology
+  </h2>
+
+  {/* Medium: Innovation Council */}
+  <p className="text-lg sm:text-xl md:text-2xl font-semibold text-[#D9B868] opacity-90">
+    Institution's Innovation Council (IIC-HITK)
+  </p>
+
+  {/* Visual Separator */}
+  <div className="mx-auto h-px w-24 bg-[#C99A3D]/40 my-2" />
+
+  {/* Smallest: National Competition Subtitle */}
+  <p className="text-[10px] sm:text-xs md:text-sm tracking-wide text-white/50 font-normal max-w-md mx-auto leading-normal">
+    A National Level Prototype & Business Model Competition
+  </p>
+</div>
+
 
 
           <h1 className="mt-6 font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none">
