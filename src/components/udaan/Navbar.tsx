@@ -30,7 +30,8 @@ import {
   patrons,
   advisory,
   faculty,
-  students,
+  studentVolunteers,
+  juryMembers,
 } from "../../data/memberData";
 
 const links = [
@@ -40,9 +41,13 @@ const links = [
   { href: "#dates", label: "Important Dates", icon: Calendar },
   { href: "#guidelines", label: "Rules & Guidelines", icon: FileText },
   { href: "#awards", label: "Awards", icon: Trophy },
-  { href: "#download", label: "Download", icon: Download },
   { href: "#faq", label: "FAQ", icon: HelpCircle },
   { href: "#contact", label: "Contact", icon: Mail },
+];
+
+const downloadItems = [
+  { label: "Download Brochure", href: "#" },
+  { label: "Download Theme", href: "#" },
 ];
 
 const memberGroups = [
@@ -69,17 +74,24 @@ const memberGroups = [
   },
   {
     id: "faculty",
-    label: "Faculty",
+    label: "Faculty Coordinator",
     icon: UserCog,
     color: "text-green-600",
     members: faculty,
   },
   {
     id: "students",
-    label: "Students",
+    label: "Student Volunteers",
     icon: GraduationCap,
     color: "text-blue-500",
-    members: students,
+    members: studentVolunteers,
+  },
+  {
+    id: "jury",
+    label: "Jury Members",
+    icon: Trophy,
+    color: "text-yellow-500",
+    members: juryMembers,
   },
 ];
 
@@ -129,6 +141,48 @@ export function Navbar() {
                 </a>
               );
             })}
+
+            {/* Download Dropdown */}
+            <div className="relative group">
+              <button
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
+              >
+                <Download size={16} />
+                Download
+                <ChevronDown
+                  size={16}
+                  className="transition-transform duration-300 group-hover:rotate-180"
+                />
+              </button>
+
+              <div
+                className="
+                  invisible opacity-0 translate-y-3
+                  group-hover:visible
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  absolute top-full left-0 mt-2
+                  w-48
+                  rounded-2xl
+                  border border-black/10
+                  bg-[#EAD8B7]
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  z-50
+                "
+              >
+                {downloadItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block px-5 py-3 hover:bg-black/5 text-black text-sm font-semibold first:rounded-t-xl last:rounded-b-xl"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
 
             {/* Members Dropdown */}
             <div className="relative group">
@@ -233,7 +287,7 @@ export function Navbar() {
 
             </div>
 
-            {links.slice(7).map((link) => {
+            {links.slice(6).map((link) => {
               const Icon = link.icon;
 
               return (
@@ -272,7 +326,7 @@ export function Navbar() {
           >
             <div className="px-6 py-4">
 
-              {links.slice(0, 7).map((link) => {
+              {links.slice(0, 6).map((link) => {
                 const Icon = link.icon;
 
                 return (
@@ -329,17 +383,35 @@ export function Navbar() {
                     </a>
                     <a href="#faculty" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <UserCog size={17} className="text-green-600" />
-                      <span className="text-sm font-semibold">Faculty</span>
+                      <span className="text-sm font-semibold">Faculty Coordinator</span>
                     </a>
                     <a href="#students" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
                       <GraduationCap size={17} className="text-blue-500" />
-                      <span className="text-sm font-semibold">Students</span>
+                      <span className="text-sm font-semibold">Student Volunteers</span>
+                    </a>
+                    <a href="#jury" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                      <Trophy size={17} className="text-yellow-500" />
+                      <span className="text-sm font-semibold">Jury Members</span>
                     </a>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {links.slice(7).map((link) => {
+              {/* Mobile Download Items */}
+              <button
+                onClick={() => setMemberOpen(false)}
+                className="flex items-center gap-3 py-3 text-black w-full"
+              >
+                <Download size={18} />
+                Download
+              </button>
+              {downloadItems.map((item) => (
+                <a key={item.label} href={item.href} className="flex items-center gap-3 py-2 pl-11 text-black text-sm">
+                  {item.label}
+                </a>
+              ))}
+
+              {links.slice(6).map((link) => {
                 const Icon = link.icon;
 
                 return (

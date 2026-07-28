@@ -45,7 +45,7 @@ export const faculty = [
   { name: "Jhalak Dutta", role: "Computer Science and Engineering" },
 ];
 
-export const students = [
+export const studentVolunteers = [
   { name: "Rupam Betal", role: "Information Technology" },
   { name: "Animesh Manna", role: "Information Technology" },
   { name: "Suptotthita Mahapatra", role: "ECE" },
@@ -56,4 +56,14 @@ export const students = [
   { name: "Ananya Chakraborty", role: "Information Technology" },
   { name: "Debjit Mondal", role: "Information Technology" },
   { name: "Ishita Sen", role: "Information Technology" },
+];
+
+export const juryMembers = [
+  { name: "Dr. Soumyajit Goswami", role: "Senior IT Architect, IBM" },
+  { name: "Mr. Sankar Mukhopadhyay", role: "Advisor (T&D), DVC" },
+  { name: "Mr. Tapomoy Koley", role: "Program Manager - Data Scientist, Capgemini" },
+  { name: "Mr. Aroop Goswami", role: "Structural Consultant, Ultratech Cement Ltd." },
+  { name: "Mr. Biman Saha", role: "Chief Architect, Persistent Systems" },
+  { name: "Mr. Abhijit Sarkar", role: "Chief R&D Officer, Sun Oil Pvt Ltd." },
+  { name: "Dr. Rajat Pal", role: "Chief Architect, TCS Research" },
 ];

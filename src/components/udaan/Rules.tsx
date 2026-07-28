@@ -5,7 +5,6 @@ const rules = [
   { q: "Team Size", a: "Maximum 3 members per team. Cross-institution teams are permitted." },
   { q: "Registration", a: "Registration is mandatory for every participant on the team." },
   { q: "Registration Fee", a: "All teams pay ₹500 per team at the time of registration." },
-  { q: "Official T-Shirt", a: "Optional UDAAN 2.0 event T-shirt available at ₹400 per member." },
   { q: "Original Prototype", a: "Only original, previously unpublished prototypes are allowed. Plagiarism results in disqualification." },
   { q: "Reporting Time", a: "Teams must report on time as per the published schedule on both days." },
   { q: "Judges' Decision", a: "The decision of the jury will be final and binding." },

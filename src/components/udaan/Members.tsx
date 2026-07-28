@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Crown, Star, Shield, GraduationCap, UserCog } from "lucide-react";
+import { Crown, Star, Shield, GraduationCap, UserCog, Trophy } from "lucide-react";
 import {
   chiefPatrons,
   patrons,
   advisory,
   faculty,
-  students,
+  studentVolunteers,
+  juryMembers,
 } from "../../data/memberData";
 
 const tabs = [
   { id: "chief", label: "Chief Patron", icon: Crown, color: "text-amber-400", border: "border-amber-400", glow: "hover:border-amber-400/40", bg: "bg-amber-500/20", activeBg: "bg-amber-400/10" },
   { id: "patrons", label: "Patrons", icon: Star, color: "text-violet-400", border: "border-violet-400", glow: "hover:border-violet-400/40", bg: "bg-violet-500/20", activeBg: "bg-violet-400/10" },
   { id: "advisory", label: "Advisory", icon: Shield, color: "text-teal-400", border: "border-teal-400", glow: "hover:border-teal-400/40", bg: "bg-teal-500/20", activeBg: "bg-teal-400/10" },
-  { id: "faculty", label: "Faculty", icon: UserCog, color: "text-green-400", border: "border-green-400", glow: "hover:border-green-400/40", bg: "bg-green-500/20", activeBg: "bg-green-400/10" },
-  { id: "students", label: "Students", icon: GraduationCap, color: "text-blue-400", border: "border-blue-400", glow: "hover:border-blue-400/40", bg: "bg-blue-500/20", activeBg: "bg-blue-400/10" },
+  { id: "faculty", label: "Faculty Coordinator", icon: UserCog, color: "text-green-400", border: "border-green-400", glow: "hover:border-green-400/40", bg: "bg-green-500/20", activeBg: "bg-green-400/10" },
+  { id: "students", label: "Student Volunteers", icon: GraduationCap, color: "text-blue-400", border: "border-blue-400", glow: "hover:border-blue-400/40", bg: "bg-blue-500/20", activeBg: "bg-blue-400/10" },
+  { id: "jury", label: "Jury Members", icon: Trophy, color: "text-yellow-400", border: "border-yellow-400", glow: "hover:border-yellow-400/40", bg: "bg-yellow-500/20", activeBg: "bg-yellow-400/10" },
 ];
 
 const dataMap: Record<string, { name: string; role: string }[]> = {
@@ -22,7 +24,8 @@ const dataMap: Record<string, { name: string; role: string }[]> = {
   patrons,
   advisory,
   faculty,
-  students,
+  students: studentVolunteers,
+  jury: juryMembers,
 };
 
 const hashToTab: Record<string, keyof typeof dataMap> = {
@@ -31,6 +34,7 @@ const hashToTab: Record<string, keyof typeof dataMap> = {
   advisory: "advisory",
   faculty: "faculty",
   students: "students",
+  jury: "jury",
 };
 
 function MemberCard({
@@ -115,7 +119,7 @@ export function Members() {
             <span className="text-gradient-gold">Members</span>
           </h2>
           <p className="mt-4 text-white/70">
-            Our leadership, advisors, faculty mentors and student coordinators.
+            Our leadership, advisors, faculty coordinators, student volunteers and jury members.
           </p>
         </motion.div>
 
@@ -147,6 +151,7 @@ export function Members() {
         <div id="advisory" className="block h-0 scroll-mt-28" />
         <div id="faculty" className="block h-0 scroll-mt-28" />
         <div id="students" className="block h-0 scroll-mt-28" />
+        <div id="jury" className="block h-0 scroll-mt-28" />
 
         {/* Section label */}
         <div className="mt-10 mb-6 flex items-center gap-3">
