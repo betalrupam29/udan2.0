@@ -124,6 +124,8 @@ export function Members() {
   const tab = tabs.find((t) => t.id === activeTab)!;
   const members = dataMap[activeTab];
 
+  const anchorClassName = "block h-0 scroll-mt-28";
+
   useEffect(() => {
     const syncTabFromHash = () => {
       const hash = window.location.hash.replace("#", "");
@@ -192,6 +194,13 @@ export function Members() {
           })}
         </div>
 
+        {/* Hash anchors for navbar dropdown links */}
+        <div id="chief" className="block h-0 scroll-mt-28" />
+        <div id="patrons" className="block h-0 scroll-mt-28" />
+        <div id="advisory" className="block h-0 scroll-mt-28" />
+        <div id="faculty" className="block h-0 scroll-mt-28" />
+        <div id="students" className="block h-0 scroll-mt-28" />
+
         {/* Section label */}
         <div className="mt-10 mb-6 flex items-center gap-3">
           {(() => { const TIcon = tab.icon; return <TIcon className={tab.color} size={30} />; })()}
@@ -217,13 +226,6 @@ export function Members() {
             ))}
           </motion.div>
         </AnimatePresence>
-
-        {/* Hidden anchors for navbar dropdown links */}
-        <span id="chief" className="sr-only" />
-        <span id="patrons" className="sr-only" />
-        <span id="advisory" className="sr-only" />
-        <span id="faculty" className="sr-only" />
-        <span id="students" className="sr-only" />
 
       </div>
     </section>

@@ -16,7 +16,7 @@ const rules = [
 const faqs = [
   { q: "What is UDAAN2.0 competition about?", a: "UDAAN2.0 is a startup and business model competition organized by IIC-HITK that focuses on innovative solutions aligned with UN Sustainable Development Goals. It provides a platform for students to transform their ideas into viable business models with expert mentorship and substantial prizes." },
   { q: "Who can participate in UDAAN2.0?", a: "The competition is open to all undergraduate and postgraduate students. Teams can have a maximum of 3 members including the team leader. Both HITK students and external participants are welcome." },
-  { q: "Is there any registration fee?", a: "500 Registration fees for all teams." },
+  { q: "Is there any registration fee?", a: "₹500 registration fee for shortlisted teams only." },
   { q: "What should be the team composition?", a: "Each team can have a maximum of 3 members including one team leader. The team leader will be the primary point of contact. Teams can have members from different colleges and disciplines." },
   { q: "Can I participate individually?", a: "Yes, you can participate individually, but we encourage forming teams for diverse perspectives and skills. Individual participants can register as a team of one." },
   { q: "Can team members be from different colleges?", a: "Yes, team members can be from different colleges and institutions. However, if any team member is from outside HITK, the team will be considered as external participants and need to pay the registration fee." },
