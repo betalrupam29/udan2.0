@@ -34,14 +34,14 @@ export const advisory = [
 ];
 
 export const faculty = [
-  { name: "Rituparna Sinha", role: "Information Technology" },
-  { name: "Nandan Kumar Jana", role: "Biotechnology" },
+  { name: "Dr.Rituparna Sinha", role: "Information Technology" },
+  { name: "Dr.Nandan Kumar Jana", role: "Biotechnology" },
   { name: "Avijit Ghosh", role: "Chemical Engineering" },
   { name: "Puja Basu Chaudhuri", role: "Civil Engineering" },
-  { name: "Nabamita Banerjee Roy", role: "Associate Professor" },
+  { name: "Dr.Nabamita Banerjee Roy", role: "Electrical Engineering" },
   { name: "Pramita Sen", role: "Information Technology" },
   { name: "Deep Malya Mukhopadhyay", role: "Information Technology" },
-  { name: "Santanu Roy", role: "Information Technology" },
+  { name: "Santanu Roy", role: "Computer Science and Business System" },
   { name: "Jhalak Dutta", role: "Computer Science and Engineering" },
 ];
 

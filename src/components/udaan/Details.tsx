@@ -4,7 +4,7 @@ import { Users, UserCheck, IndianRupee, Shirt, Building2, Monitor } from "lucide
 const stats = [
   { icon: Users, label: "Participants after Screening", value: "30 Teams" },
   { icon: UserCheck, label: "Maximum Team Members", value: "3" },
-  { icon: IndianRupee, label: "Registration Fee", value: "₹500 / team" },
+  { icon: IndianRupee, label: "Registration Fee", value: "₹500 / selected team" },
   { icon: Shirt, label: "Official Event T-Shirt", value: "₹400 each" },
   { icon: Building2, label: "Venue", value: "Executive Hall" },
   { icon: Monitor, label: "Mode", value: "Offline" },
