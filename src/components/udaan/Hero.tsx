@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Monitor, Users, Download } from "lucide-react";
+import { Calendar, MapPin, Monitor, Users, Download, CheckCircle2, CalendarClock } from "lucide-react";
 import PaymentRegister from "./PaymentRegister";
+
 
 const info = [
   { icon: Calendar, label: "Date", value: "26–27 August 2026" },
-  { icon: MapPin, label: "Venue", value: "Executive Hall, HITK, Kolkata" },
-  { icon: Monitor, label: "Mode", value: "Offline" },
+  {
+  icon: CheckCircle2,
+  label: "Registration",
+  value: "₹500 only for shortlisted 30 teams",
+},
+  { icon: CalendarClock, label: "Deadline", value: "16 August 2026" },
   { icon: Users, label: "Teams", value: "30 · Max 3 members" },
 ];
 
@@ -20,10 +25,11 @@ export function Hero() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full glass-dark px-4 py-1.5 text-xs sm:text-sm font-medium text-gold-light">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-glow-pulse" />
-            National Level · IIC · Heritage Institute of Technology
-          </span>
+        <span className="inline-flex items-center gap-3 rounded-full glass-dark px-6 py-3 text-sm sm:text-lg md:text-xl font-bold text-gold-light border border-gold/40 shadow-gold-glow">
+  <span className="h-3 w-3 rounded-full bg-gold animate-glow-pulse" />
+  National Level • IIC • Heritage Institute of Technology
+</span>
+
 
           <h1 className="mt-6 font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none">
             <span className="block">UDAAN</span>
@@ -42,6 +48,37 @@ export function Hero() {
 
           
         </motion.div>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+  <div className="glass-dark border border-gold/30 rounded-2xl px-6 py-4 min-w-[220px]">
+    <p className="text-xs uppercase tracking-[0.25em] text-gold-light">
+      Prize Pool
+    </p>
+
+    <h3 className="mt-1 text-3xl font-bold text-gradient-gold">
+      ₹80,000
+    </h3>
+
+    <p className="text-white/70 text-sm mt-1">
+      Total Cash Rewards
+    </p>
+  </div>
+
+  <div className="glass-dark border border-white/10 rounded-2xl px-6 py-4 min-w-[220px]">
+    <p className="text-xs uppercase tracking-[0.25em] text-white/60">
+      Winner
+    </p>
+
+    <h3 className="mt-1 text-3xl font-bold text-white">
+      🏆 ₹30,000
+    </h3>
+
+    <p className="text-white/70 text-sm mt-1">
+      1st Prize
+    </p>
+  </div>
+
+</div>
 
         {/* Info pills */}
         <motion.div

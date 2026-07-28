@@ -3,9 +3,30 @@ import { Trophy, Medal, Award } from "lucide-react";
 import { SectionHeader } from "./Section";
 
 const prizes = [
-  { rank: "1st", label: "First Prize", amount: "₹10,000", icon: Trophy, tone: "gold", emoji: "🥇" },
-  { rank: "2nd", label: "Second Prize", amount: "₹8,000", icon: Medal, tone: "silver", emoji: "🥈" },
-  { rank: "3rd", label: "Third Prize", amount: "₹5,000", icon: Medal, tone: "bronze", emoji: "🥉" },
+  {
+    rank: "1st",
+    label: "First Prize",
+    amount: "₹30,000",
+    icon: Trophy,
+    tone: "gold",
+    emoji: "🥇",
+  },
+  {
+    rank: "2nd",
+    label: "Second Prize",
+    amount: "₹20,000",
+    icon: Medal,
+    tone: "silver",
+    emoji: "🥈",
+  },
+  {
+    rank: "3rd",
+    label: "Third Prize",
+    amount: "₹15,000",
+    icon: Medal,
+    tone: "bronze",
+    emoji: "🥉",
+  },
 ];
 
 export function Awards() {
@@ -49,25 +70,56 @@ export function Awards() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-8 rounded-3xl glass-dark p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-        >
-          <div className="flex items-center gap-4">
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/10">
-              <Award size={26} className="text-gold-light" />
-            </div>
-            <div>
-              <div className="text-sm uppercase tracking-widest text-white/60">🏅 Next Three Teams</div>
-              <div className="font-display text-2xl font-bold">₹2,000 each</div>
-            </div>
-          </div>
-          <div className="text-sm text-white/70 max-w-md text-center sm:text-right">
-            Every eligible participant receives an official UDAAN 2.0 certificate of participation.
-          </div>
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="mt-8 rounded-3xl glass-dark p-6 sm:p-8"
+>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div className="flex items-center gap-4 rounded-2xl bg-white/5 p-5 border border-white/10">
+      <div className="grid h-14 w-14 place-items-center rounded-2xl bg-yellow-500/20">
+        <Award size={26} className="text-yellow-400" />
+      </div>
+      <div>
+        <div className="text-sm uppercase tracking-widest text-white/60">
+          4th Prize
+        </div>
+        <div className="font-display text-2xl font-bold text-gradient-gold">
+          ₹10,000
+        </div>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4 rounded-2xl bg-white/5 p-5 border border-white/10">
+      <div className="grid h-14 w-14 place-items-center rounded-2xl bg-yellow-500/20">
+        <Award size={26} className="text-yellow-400" />
+      </div>
+      <div>
+        <div className="text-sm uppercase tracking-widest text-white/60">
+          5th Prize
+        </div>
+        <div className="font-display text-2xl font-bold text-gradient-gold">
+          ₹5,000
+        </div>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-center rounded-2xl bg-white/5 p-5 border border-white/10">
+      <div className="text-center">
+        <div className="text-sm uppercase tracking-widest text-white/60">
+          Certificates
+        </div>
+        <div className="mt-2 text-lg font-semibold">
+          🎓 Every eligible participant receives an official UDAAN 2.0
+          Certificate of Participation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</motion.div>
       </div>
     </section>
   );
