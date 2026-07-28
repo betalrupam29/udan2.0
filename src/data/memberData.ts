@@ -48,7 +48,7 @@ export const faculty = [
 export const students = [
   { name: "Rupam Betal", role: "Information Technology" },
   { name: "Animesh Manna", role: "Information Technology" },
-  { name: "Priya Das", role: "Information Technology" },
+  { name: "Suptotthita Mahapatra", role: "ECE" },
   { name: "Rahul Singh", role: "Information Technology" },
   { name: "Sneha Roy", role: "Information Technology" },
   { name: "Ankit Kumar", role: "Information Technology" },
