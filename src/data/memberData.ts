@@ -39,7 +39,7 @@ export const faculty = [
   { name: "Avijit Ghosh", role: "Chemical Engineering" },
   { name: "Puja Basu Chaudhuri", role: "Civil Engineering" },
   { name: "Dr.Nabamita Banerjee Roy", role: "Electrical Engineering" },
-  { name: "Pramita Sen", role: "Information Technology" },
+  { name: "Dr.Pramita Sen", role: "Chemical Engineering" },
   { name: "Deep Malya Mukhopadhyay", role: "Information Technology" },
   { name: "Santanu Roy", role: "Computer Science and Business System" },
   { name: "Jhalak Dutta", role: "Computer Science and Engineering" },
