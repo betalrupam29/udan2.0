@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+
 import {
   Menu,
   X,
@@ -13,6 +15,7 @@ import {
   Mail,
   Users,
   ChevronDown,
+  ChevronRight,
   GraduationCap,
   UserCog,
   Download,
@@ -21,6 +24,14 @@ import {
   Shield,
 } from "lucide-react";
 import { Logos } from "./Logo";
+
+import {
+  chiefPatrons,
+  patrons,
+  advisory,
+  faculty,
+  students,
+} from "/home/animesh1976/Desktop/udan2.0/src/data/memberData.ts";
 
 const links = [
   { href: "#home", label: "Home", icon: Home },
@@ -32,6 +43,44 @@ const links = [
   { href: "#download", label: "Download", icon: Download },
   { href: "#faq", label: "FAQ", icon: HelpCircle },
   { href: "#contact", label: "Contact", icon: Mail },
+];
+
+const memberGroups = [
+  {
+    id: "chief",
+    label: "Chief Patron",
+    icon: Crown,
+    color: "text-amber-500",
+    members: chiefPatrons,
+  },
+  {
+    id: "patrons",
+    label: "Patrons",
+    icon: Star,
+    color: "text-violet-500",
+    members: patrons,
+  },
+  {
+    id: "advisory",
+    label: "Advisory",
+    icon: Shield,
+    color: "text-teal-500",
+    members: advisory,
+  },
+  {
+    id: "faculty",
+    label: "Faculty",
+    icon: UserCog,
+    color: "text-green-600",
+    members: faculty,
+  },
+  {
+    id: "students",
+    label: "Students",
+    icon: GraduationCap,
+    color: "text-blue-500",
+    members: students,
+  },
 ];
 
 export function Navbar() {
@@ -96,43 +145,91 @@ export function Navbar() {
               </button>
 
               <div
-                className="
-                  invisible opacity-0 translate-y-3
-                  group-hover:visible
-                  group-hover:opacity-100
-                  group-hover:translate-y-0
-                  absolute top-full left-0 mt-2
-                  w-56
-                  rounded-2xl
-                  border border-black/10
-                  bg-[#EAD8B7]
-                  shadow-xl
-                  transition-all
-                  duration-300
-                  z-50
-                "
-              >
-                <a href="#chief" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5 rounded-t-2xl">
-                  <Crown size={17} className="text-amber-500" />
-                  <span className="text-sm font-semibold">Chief Patron</span>
-                </a>
-                <a href="#patrons" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
-                  <Star size={17} className="text-violet-500" />
-                  <span className="text-sm font-semibold">Patrons</span>
-                </a>
-                <a href="#advisory" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
-                  <Shield size={17} className="text-teal-500" />
-                  <span className="text-sm font-semibold">Advisory</span>
-                </a>
-                <a href="#faculty" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5">
-                  <UserCog size={17} className="text-green-600" />
-                  <span className="text-sm font-semibold">Faculty</span>
-                </a>
-                <a href="#students" className="flex items-center gap-3 px-5 py-3.5 text-black hover:bg-black/5 rounded-b-2xl">
-                  <GraduationCap size={17} className="text-blue-500" />
-                  <span className="text-sm font-semibold">Students</span>
-                </a>
-              </div>
+  className="
+    invisible opacity-0 translate-y-3
+    group-hover:visible
+    group-hover:opacity-100
+    group-hover:translate-y-0
+    absolute top-full left-0 mt-2
+    w-60
+    rounded-2xl
+    border border-black/10
+    bg-[#EAD8B7]
+    shadow-xl
+    transition-all
+    duration-300
+    z-50
+  "
+>
+  {memberGroups.map((group) => {
+    const Icon = group.icon;
+
+    return (
+      <div
+        key={group.id}
+        className="group/item relative"
+      >
+        <a
+          href={`#${group.id}`}
+          className="flex items-center justify-between px-5 py-3 hover:bg-black/5"
+        >
+          <div className="flex items-center gap-3">
+            <Icon
+              size={17}
+              className={group.color}
+            />
+
+            <span className="text-sm font-semibold">
+              {group.label}
+            </span>
+          </div>
+
+          <ChevronRight size={15} />
+        </a>
+
+        {/* Flyout */}
+        <div
+          className="
+            absolute left-full top-0 ml-2
+            w-80
+            max-h-[70vh]
+            overflow-y-auto
+            rounded-2xl
+            border border-black/10
+            bg-[#EAD8B7]
+            shadow-xl
+
+            opacity-0
+            invisible
+            translate-x-2
+
+            transition-all
+            duration-200
+
+            group-hover/item:opacity-100
+            group-hover/item:visible
+            group-hover/item:translate-x-0
+          "
+        >
+          {group.members.map((member) => (
+            <div
+              key={member.name}
+              className="px-4 py-3 border-b border-black/10 last:border-0 hover:bg-black/5"
+            >
+              <p className="font-semibold text-sm text-black">
+                {member.name}
+              </p>
+
+              <p className="text-xs text-black/60 mt-1 leading-relaxed">
+                {member.role}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>
 
             </div>
 
