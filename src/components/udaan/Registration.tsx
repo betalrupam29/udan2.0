@@ -42,7 +42,7 @@ export function Registration() {
         <SectionHeader
           eyebrow="Register"
           title={<>Reserve your team's <span className="text-gradient-gold">spot</span>.</>}
-          description="External teams: ₹500 per team. T-shirts optional at ₹400. Screening selects 30 finalist teams."
+          description="External teams: ₹500 per team. T-shirts optional at ₹400. Screening selects maximum 50 finalist teams."
         />
 
         <motion.form

@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "From Grounded Ideas to Sky-High Impact. Join 30 finalist teams competing across 7 SDG-mapped themes at HITK Kolkata.",
+          "From Grounded Ideas to Sky-High Impact. Join 50 (max) finalist teams competing across 7 SDG-mapped themes at HITK Kolkata.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

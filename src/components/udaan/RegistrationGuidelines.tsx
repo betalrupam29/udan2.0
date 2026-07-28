@@ -8,10 +8,10 @@ const guidelines = [
     iconColor: "text-blue-400",
     bgColor: "bg-blue-500/20",
     items: [
-      "Each team can have a maximum of 3 student members and 1 mentor",
+      "Each team can have a maximum of 3 student members and a mentor (optional)",
       "Open to all undergraduate and postgraduate students",
       "₹500 per team",
-      "Registration: 7th August 2026 - 17th August 2026",
+      "Registration: 28th July 2026 - 16th August 2026",
     ],
   },
   {
@@ -55,7 +55,7 @@ export function RegistrationGuidelines() {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
             <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
-            Guidelines
+            Rules & Guidelines
           </div>
           <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
             Registration <span className="text-gradient-gold">Information</span>.

@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { Users, UserCheck, IndianRupee, Shirt, Building2, Monitor } from "lucide-react";
+import { Users, UserCheck, IndianRupee, Building2, Monitor } from "lucide-react";
 
 const stats = [
-  { icon: Users, label: "Participants after Screening", value: "30 Teams" },
+  { icon: Users, label: "Participants after Screening", value: "50 Teams (max)" },
   { icon: UserCheck, label: "Maximum Team Members", value: "3" },
   { icon: IndianRupee, label: "Registration Fee", value: "₹500 / selected team" },
-  { icon: Shirt, label: "Official Event T-Shirt", value: "₹400 each" },
-  { icon: Building2, label: "Venue", value: "Executive Hall" },
+  { icon: Building2, label: "Venue", value: "Heritage Institute of Technology" },
   { icon: Monitor, label: "Mode", value: "Offline" },
 ];
 
@@ -41,9 +40,11 @@ export function Details() {
               transition={{ delay: i * 0.06, duration: 0.5 }}
               className="rounded-3xl border border-white/10 glass-dark p-6 hover:-translate-y-1 transition-transform"
             >
-              <s.icon className="text-gold-light" size={22} />
+              <div className="flex items-center gap-2">
+                <s.icon className="text-gold-light" size={22} />
+                <div className="text-xs uppercase tracking-wider text-white/70 font-semibold">{s.label}</div>
+              </div>
               <div className="mt-4 text-2xl sm:text-3xl font-bold text-white">{s.value}</div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{s.label}</div>
             </motion.div>
           ))}
         </div>

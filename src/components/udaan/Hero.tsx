@@ -8,10 +8,10 @@ const info = [
   {
   icon: CheckCircle2,
   label: "Registration",
-  value: "₹500 only for shortlisted 30 teams",
+  value: "₹500 only for shortlisted 50(max) teams",
 },
   { icon: CalendarClock, label: "Deadline", value: "16 August 2026" },
-  { icon: Users, label: "Teams", value: "30 · Max 3 members" },
+  { icon: Users, label: "Teams", value: " Max 3 members" },
 ];
 
 export function Hero() {
