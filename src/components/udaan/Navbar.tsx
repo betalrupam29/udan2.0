@@ -171,7 +171,7 @@ export function Navbar() {
       >
         <a
           href={`#${group.id}`}
-          className="flex items-center justify-between px-5 py-3 hover:bg-black/5"
+          className="flex items-center justify-between px-5 py-3 hover:bg-black/5 text-black"
         >
           <div className="flex items-center gap-3">
             <Icon
