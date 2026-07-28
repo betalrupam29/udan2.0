@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Crown, Star, Shield, GraduationCap, UserCog, Trophy } from "lucide-react";
 import {
   chiefPatrons,
   patrons,
@@ -11,12 +10,12 @@ import {
 } from "../../data/memberData";
 
 const tabs = [
-  { id: "chief", label: "Chief Patron", icon: Crown, color: "text-amber-400", border: "border-amber-400", glow: "hover:border-amber-400/40", bg: "bg-amber-500/20", activeBg: "bg-amber-400/10" },
-  { id: "patrons", label: "Patrons", icon: Star, color: "text-violet-400", border: "border-violet-400", glow: "hover:border-violet-400/40", bg: "bg-violet-500/20", activeBg: "bg-violet-400/10" },
-  { id: "advisory", label: "Advisory", icon: Shield, color: "text-teal-400", border: "border-teal-400", glow: "hover:border-teal-400/40", bg: "bg-teal-500/20", activeBg: "bg-teal-400/10" },
-  { id: "faculty", label: "Faculty Coordinator", icon: UserCog, color: "text-green-400", border: "border-green-400", glow: "hover:border-green-400/40", bg: "bg-green-500/20", activeBg: "bg-green-400/10" },
-  { id: "students", label: "Student Volunteers", icon: GraduationCap, color: "text-blue-400", border: "border-blue-400", glow: "hover:border-blue-400/40", bg: "bg-blue-500/20", activeBg: "bg-blue-400/10" },
-  { id: "jury", label: "Jury Members", icon: Trophy, color: "text-yellow-400", border: "border-yellow-400", glow: "hover:border-yellow-400/40", bg: "bg-yellow-500/20", activeBg: "bg-yellow-400/10" },
+  { id: "chief", label: "Chief Patron", color: "text-amber-400", border: "border-amber-400", glow: "hover:border-amber-400/40", bg: "bg-amber-500/20", activeBg: "bg-amber-400/10" },
+  { id: "patrons", label: "Patrons", color: "text-violet-400", border: "border-violet-400", glow: "hover:border-violet-400/40", bg: "bg-violet-500/20", activeBg: "bg-violet-400/10" },
+  { id: "advisory", label: "Advisory", color: "text-teal-400", border: "border-teal-400", glow: "hover:border-teal-400/40", bg: "bg-teal-500/20", activeBg: "bg-teal-400/10" },
+  { id: "faculty", label: "Faculty Coordinator", color: "text-green-400", border: "border-green-400", glow: "hover:border-green-400/40", bg: "bg-green-500/20", activeBg: "bg-green-400/10" },
+  { id: "students", label: "Student Volunteers", color: "text-blue-400", border: "border-blue-400", glow: "hover:border-blue-400/40", bg: "bg-blue-500/20", activeBg: "bg-blue-400/10" },
+  { id: "jury", label: "Jury Members", color: "text-yellow-400", border: "border-yellow-400", glow: "hover:border-yellow-400/40", bg: "bg-yellow-500/20", activeBg: "bg-yellow-400/10" },
 ];
 
 const dataMap: Record<string, { name: string; role: string }[]> = {
@@ -46,7 +45,6 @@ function MemberCard({
   index: number;
   tab: (typeof tabs)[0];
 }) {
-  const Icon = tab.icon;
   return (
     <motion.div
       key={person.name}
@@ -57,14 +55,9 @@ function MemberCard({
       whileHover={{ y: -4 }}
       className={`rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 ${tab.glow}`}
     >
-      <div className="flex items-start gap-4">
-        <div className={`h-12 w-12 shrink-0 rounded-full ${tab.bg} flex items-center justify-center`}>
-          <Icon size={22} className={tab.color} />
-        </div>
-        <div>
-          <h4 className="font-bold text-lg text-white leading-snug">{person.name}</h4>
-          <p className="text-white/55 text-sm mt-0.5 leading-relaxed">{person.role}</p>
-        </div>
+      <div>
+        <h4 className="font-bold text-lg text-white leading-snug">{person.name}</h4>
+        <p className="text-white/55 text-sm mt-0.5 leading-relaxed">{person.role}</p>
       </div>
     </motion.div>
   );
@@ -126,7 +119,6 @@ export function Members() {
         {/* Tabs */}
         <div className="mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
           {tabs.map((t) => {
-            const TIcon = t.icon;
             const isActive = activeTab === t.id;
             return (
               <button
@@ -138,7 +130,6 @@ export function Members() {
                     : "border-white/10 text-white/50 hover:border-white/20 hover:text-white/80"
                 }`}
               >
-                <TIcon size={15} />
                 {t.label}
               </button>
             );
@@ -154,8 +145,7 @@ export function Members() {
         <div id="jury" className="block h-0 scroll-mt-28" />
 
         {/* Section label */}
-        <div className="mt-10 mb-6 flex items-center gap-3">
-          {(() => { const TIcon = tab.icon; return <TIcon className={tab.color} size={30} />; })()}
+        <div className="mt-10 mb-6">
           <h3 className="text-2xl sm:text-3xl font-bold">{tab.label}</h3>
         </div>
 

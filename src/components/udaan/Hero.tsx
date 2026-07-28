@@ -62,56 +62,83 @@ export function Hero() {
             Institution's Innovation Council (IIC), Heritage Institute of Technology, Kolkata.
           </p>
 
-          
+
         </motion.div>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-  <div className="glass-dark border border-gold/30 rounded-2xl px-6 py-4 min-w-[220px]">
-    <p className="text-xs uppercase tracking-[0.25em] text-gold-light">
-      Prize Pool
-    </p>
-
-    <h3 className="mt-1 text-3xl font-bold text-gradient-gold">
-      ₹80,000
-    </h3>
-
-    <p className="text-white/70 text-sm mt-1">
-      Total Cash Rewards
-    </p>
-  </div>
-
-  <div className="glass-dark border border-white/10 rounded-2xl px-6 py-4 min-w-[220px]">
-    <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-      Winner
-    </p>
-
-    <h3 className="mt-1 text-3xl font-bold text-white">
-      🏆 ₹30,000
-    </h3>
-
-    <p className="text-white/70 text-sm mt-1">
-      1st Prize
-    </p>
-  </div>
-
-</div>
-
-        {/* Info pills */}
+        {/* Two-column layout for prizes and event details */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto mt-14 grid max-w-5xl grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          className="mx-auto mt-12 grid max-w-6xl grid-cols-1 lg:grid-cols-2 gap-6"
         >
-          {info.map((it) => (
-            <div key={it.label} className="glass-dark rounded-2xl p-4 sm:p-5">
-              <div className="flex items-center gap-2 text-gold-light">
-                <it.icon size={16} />
-                <span className="text-[10px] sm:text-xs uppercase tracking-wider">{it.label}</span>
+          {/* Left: Prize Information Card */}
+          <div className="glass-dark border border-gold/30 rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-gradient-gold mb-4">Prize Distribution</h3>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-gold-light font-semibold">🥇 1st Prize</span>
+                <span className="text-xl font-bold text-white">₹30,000</span>
               </div>
-              <div className="mt-2 text-sm sm:text-base font-semibold text-white leading-snug">{it.value}</div>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-gold-light font-semibold">🥈 2nd Prize</span>
+                <span className="text-xl font-bold text-white">₹20,000</span>
+              </div>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-gold-light font-semibold">🥉 3rd Prize</span>
+                <span className="text-xl font-bold text-white">₹15,000</span>
+              </div>
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
+                <span className="text-gold-light font-semibold">4th Prize</span>
+                <span className="text-xl font-bold text-white">₹10,000</span>
+              </div>
+              <div className="flex items-center justify-between py-2">
+                <span className="text-gold-light font-semibold">5th Prize</span>
+                <span className="text-xl font-bold text-white">₹5,000</span>
+              </div>
+              <div className="mt-4 pt-3 border-t border-gold/30">
+                <div className="flex items-center justify-between">
+                  <span className="text-gold font-bold">Total Prize Pool</span>
+                  <span className="text-2xl font-bold text-gradient-gold">₹80,000</span>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Right: Event Details Card */}
+          <div className="glass-dark border border-white/10 rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-white mb-4">Event Details</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Calendar className="text-gold-light mt-1" size={20} />
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-gold-light">Date</p>
+                  <p className="text-lg font-semibold text-white mt-1">26–27 August 2026</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-gold-light mt-1" size={20} />
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-gold-light">Registration</p>
+                  <p className="text-lg font-semibold text-white mt-1">₹500 only for shortlisted 50(max) teams</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CalendarClock className="text-gold-light mt-1" size={20} />
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-gold-light">Deadline</p>
+                  <p className="text-lg font-semibold text-white mt-1">16 August 2026</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Users className="text-gold-light mt-1" size={20} />
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-gold-light">Teams</p>
+                  <p className="text-lg font-semibold text-white mt-1">Max 3 members</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
       </div>

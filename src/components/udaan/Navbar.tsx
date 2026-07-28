@@ -100,6 +100,14 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [memberOpen, setMemberOpen] = useState(false);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "auto" });
+    }
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -117,15 +125,15 @@ export function Navbar() {
         scrolled ? "shadow-lg" : "shadow-sm"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 sm:h-24 items-center justify-between">
+      <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 sm:h-24 items-center justify-between gap-4">
 
           <a href="#home" className="shrink-0">
             <Logos size="lg" whiteBg={true} />
           </a>
 
           {/* Desktop Navbar */}
-          <nav className="hidden xl:flex items-center gap-1 min-w-0">
+          <nav className="hidden xl:flex flex-grow items-center gap-2 justify-start">
 
             {links.slice(0, 7).map((link) => {
               const Icon = link.icon;
@@ -134,6 +142,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleScroll(e, link.href)}
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
                 >
                   <Icon size={16} />
@@ -225,6 +234,7 @@ export function Navbar() {
       >
         <a
           href={`#${group.id}`}
+          onClick={(e) => handleScroll(e, `#${group.id}`)}
           className="flex items-center justify-between px-5 py-3 hover:bg-black/5 text-black"
         >
           <div className="flex items-center gap-3">
@@ -294,6 +304,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleScroll(e, link.href)}
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
                 >
                   <Icon size={16} />
@@ -301,6 +312,26 @@ export function Navbar() {
                 </a>
               );
             })}
+
+            {/* Register Now Button with Blinking Animation */}
+            <motion.button
+              onClick={() => window.open("https://forms.gle/cUNLDUxD4YeBbxUNA", "_blank", "noopener,noreferrer")}
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(250, 204, 21, 0.4)",
+                  "0 0 30px rgba(250, 204, 21, 0.8)",
+                  "0 0 20px rgba(250, 204, 21, 0.4)",
+                ],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="ml-4 overflow-hidden rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 px-5 py-2.5 text-sm font-bold text-blue-950 shadow-lg hover:scale-105 transition-transform duration-300"
+            >
+              Register Now →
+            </motion.button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -333,7 +364,10 @@ export function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      handleScroll(e, link.href);
+                      setOpen(false);
+                    }}
                     className="flex items-center gap-3 py-3 text-black"
                   >
                     <Icon size={18} />
@@ -369,27 +403,45 @@ export function Navbar() {
                     exit={{ height: 0, opacity: 0 }}
                     className="ml-8 overflow-hidden"
                   >
-                    <a href="#chief" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#chief" onClick={(e) => {
+                      handleScroll(e, "#chief");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <Crown size={17} className="text-amber-500" />
                       <span className="text-sm font-semibold">Chief Patron</span>
                     </a>
-                    <a href="#patrons" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#patrons" onClick={(e) => {
+                      handleScroll(e, "#patrons");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <Star size={17} className="text-violet-500" />
                       <span className="text-sm font-semibold">Patrons</span>
                     </a>
-                    <a href="#advisory" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#advisory" onClick={(e) => {
+                      handleScroll(e, "#advisory");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <Shield size={17} className="text-teal-500" />
                       <span className="text-sm font-semibold">Advisory</span>
                     </a>
-                    <a href="#faculty" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#faculty" onClick={(e) => {
+                      handleScroll(e, "#faculty");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <UserCog size={17} className="text-green-600" />
                       <span className="text-sm font-semibold">Faculty Coordinator</span>
                     </a>
-                    <a href="#students" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#students" onClick={(e) => {
+                      handleScroll(e, "#students");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <GraduationCap size={17} className="text-blue-500" />
                       <span className="text-sm font-semibold">Student Volunteers</span>
                     </a>
-                    <a href="#jury" onClick={() => setOpen(false)} className="flex items-center gap-3 py-2.5 text-black">
+                    <a href="#jury" onClick={(e) => {
+                      handleScroll(e, "#jury");
+                      setOpen(false);
+                    }} className="flex items-center gap-3 py-2.5 text-black">
                       <Trophy size={17} className="text-yellow-500" />
                       <span className="text-sm font-semibold">Jury Members</span>
                     </a>
@@ -418,7 +470,10 @@ export function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => {
+                      handleScroll(e, link.href);
+                      setOpen(false);
+                    }}
                     className="flex items-center gap-3 py-3 text-black"
                   >
                     <Icon size={18} />

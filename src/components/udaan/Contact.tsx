@@ -27,25 +27,25 @@ export function Contact() {
 
             <div className="flex items-center gap-4">
               <Mail className="text-gold-light shrink-0" size={24} />
-              <a href="mailto:rituparna.sinha@heritageit.edu" className="text-white/80 hover:text-white transition-colors text-sm sm:text-base">
-                rituparna.sinha@heritageit.edu
+              <a href="mailto:iic-hitk@heritageit.edu" className="text-white/80 hover:text-white transition-colors text-sm sm:text-base">
+                iic-hitk@heritageit.edu
               </a>
             </div>
 
             <div className="flex items-center gap-4">
               <Phone className="text-gold-light shrink-0" size={24} />
               <a href="tel:+919123074188" className="text-white/80 hover:text-white transition-colors text-sm sm:text-base">
-                +91-91230-74188
+                +91-
               </a>
             </div>
           </div>
 
-          <div className="mt-10 rounded-xl bg-white/5 p-6 border border-white/10">
+          {/* <div className="mt-10 rounded-xl bg-white/5 p-6 border border-white/10">
             <h3 className="text-xl font-bold mb-3 text-gold-light">Support Hours</h3>
             <div className="text-white/70 text-sm sm:text-base space-y-1">
               <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

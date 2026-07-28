@@ -33,7 +33,7 @@ export function About() {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
             <span className="h-1 w-1 rounded-full bg-gold animate-glow-pulse" />
-            About the summit
+            About Udaan 2.0
           </div>
           <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
             Where prototypes meet <span className="text-gradient-gold">purpose</span>.

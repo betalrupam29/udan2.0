@@ -9,7 +9,7 @@ export const patrons = [
   { name: "Shri P R Agarwala", role: "Chairman, Board of Governors, HIT & Chairman, Rupa & Co Ltd" },
   { name: "Shri Sajjan Bhajanka", role: "Chairman, Century Plyboards (India) Ltd" },
   { name: "Shri Probir Roy", role: "Director, Kalyan Bharti Trust" },
-  { name: "Shri P K Agarwal", role: "Chief Executive Officer, Kalyan Bharti Trust" },
+  { name: "Shri Pradip Agarwal", role: "Chief Executive Officer, Heritage Group of institutions" },
   { name: "Prof Basab Chaudhuri", role: "Principal, Heritage Institute of Technology" },
 ];
 
@@ -19,43 +19,50 @@ export const advisory = [
     role: "Registrar and HOD, Department of Computer Science & Business System, Heritage Institute of Technology",
   },
   {
+    name: "Prof. Souvik Bhattacharyya",
+    role: "Principal Advisor, Heritage Group of Institutions",
+  },
+  {
     name: "Prof. Sandip Chatterjee",
     role: "IQAC-HITK Coordinator, Joint Registrar (Academic), Associate Dean (Student Affairs) and HOD, Mathematics at Heritage Institute of Technology",
   },
   {
-    name: "Prof. Subhashis Majumdar",
-    role: "Dean UG Program, HOD, Department of Computer Science and Engineering, Heritage Institute of Technology",
-  },
-  { name: "Mr. Arvind Srivastav", role: "Joint Registrar at Heritage Institute of Technology" },
-  {
     name: "Prof. Nandan Kumar Jana",
     role: "President, Institution Innovation Council, Associate Professor, Dept. of Biotechnology, Heritage Institute of Technology",
   },
+  { name: "Mr. Arvind Srivastav", role: "Joint Registrar at Heritage Institute of Technology" },
+  {
+    name: "Prof. Subhashis Majumdar",
+    role: "Dean UG Program, HOD, Department of Computer Science & Engineering, Heritage Institute of Technology",
+  },
+  
+  
 ];
 
 export const faculty = [
-  { name: "Dr.Rituparna Sinha", role: "Information Technology" },
-  { name: "Dr.Nandan Kumar Jana", role: "Biotechnology" },
-  { name: "Avijit Ghosh", role: "Chemical Engineering" },
-  { name: "Puja Basu Chaudhuri", role: "Civil Engineering" },
-  { name: "Dr.Nabamita Banerjee Roy", role: "Electrical Engineering" },
-  { name: "Dr.Pramita Sen", role: "Chemical Engineering" },
-  { name: "Deep Malya Mukhopadhyay", role: "Information Technology" },
-  { name: "Santanu Roy", role: "Computer Science and Business System" },
-  { name: "Jhalak Dutta", role: "Computer Science and Engineering" },
+  { name: "Prof. Rituparna Sinha", role: "Asst. Professor, Department of Information Technology, Convenor, Institution’s Innovation Council(IIC-HITK)" },
+  { name: "Prof. Deep Malya Mukhopadhyay", role: "Asst. Professor, Department of Information Technology" },
+  { name: "Prof. Avijit Ghosh", role: "Asst. Professor, Department of Chemical Engineering" },
+  { name: "Prof. Pramita Sen", role: "Asst. Professor, Department of Chemical Engineering" },
+  { name: "Prof. Puja Basu Chaudhuri", role: "Asst. Professor, Department of Civil Engineering" },
+  { name: "Prof. Nabamita Banerjee Roy", role: "Assoc. Professor, Department of Electrical Engineering" },
+  { name: "Prof. Jhalak Dutta", role: "Asst. Professor, Department of Computer Science & Engineering" },
+  { name: "Prof. Santanu Roy", role: "Asst. Professor, Department of Computer Science & Business System" },
+  { name: "Prof. Riddhi Goswami", role: "Assoc. Professor, Department of Biotechnology" },
+  
 ];
 
 export const studentVolunteers = [
   { name: "Rupam Betal", role: "Information Technology" },
   { name: "Animesh Manna", role: "Information Technology" },
-  { name: "Suptotthita Mahapatra", role: "ECE" },
-  { name: "Rahul Singh", role: "Information Technology" },
-  { name: "Sneha Roy", role: "Information Technology" },
-  { name: "Ankit Kumar", role: "Information Technology" },
-  { name: "Sourav Ghosh", role: "Information Technology" },
-  { name: "Ananya Chakraborty", role: "Information Technology" },
+  { name: "Suptotthita Mahapatra", role: "Electronics & Communication Engineering" },
+  { name: "Rahul Singh", role: "Computer Science & Business System" },
+  { name: "Sneha Roy", role: "Civil Engineering" },
+  { name: "Ankit Kumar", role: "Chemical Engineering" },
+  { name: "Sourav Ghosh", role: "Chemical Engineering" },
+  { name: "Ananya Chakraborty", role: "Computer Science & Engineering" },
   { name: "Debjit Mondal", role: "Information Technology" },
-  { name: "Ishita Sen", role: "Information Technology" },
+  { name: "Ishita Sen", role: "Computer Science & Engineering (Artificial Intelligence & Machine Learning)" },
 ];
 
 export const juryMembers = [
