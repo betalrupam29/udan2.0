@@ -31,7 +31,7 @@ import {
   advisory,
   faculty,
   students,
-} from "/home/animesh1976/Desktop/udan2.0/src/data/memberData.ts";
+} from "../../data/memberData";
 
 const links = [
   { href: "#home", label: "Home", icon: Home },

@@ -7,7 +7,7 @@ import {
   advisory,
   faculty,
   students,
-} from "/home/animesh1976/Desktop/udan2.0/src/data/memberData.ts";
+} from "../../data/memberData";
 
 const tabs = [
   { id: "chief", label: "Chief Patron", icon: Crown, color: "text-amber-400", border: "border-amber-400", glow: "hover:border-amber-400/40", bg: "bg-amber-500/20", activeBg: "bg-amber-400/10" },
