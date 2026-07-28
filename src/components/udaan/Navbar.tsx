@@ -46,8 +46,8 @@ const links = [
 ];
 
 const downloadItems = [
-  { label: "Download Brochure", href: "#" },
-  { label: "Download Theme", href: "#" },
+  { label: "Download Brochure", href: "/documents/brochure.pdf" },
+  { label: "Download Theme", href: "/documents/SDG_Mapping (1).pdf" },
 ];
 
 const memberGroups = [
