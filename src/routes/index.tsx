@@ -14,6 +14,7 @@ import { Rules, FAQ } from "@/components/udaan/Rules";
 import { Contact } from "@/components/udaan/Contact";
 import { Members } from "@/components/udaan/Members";
 import Glimpse2026 from "@/components/udaan/Glimpse2026";
+import FloatingYoutube from "@/components/udaan/FloatingYoutube";
 
 import { Footer } from "@/components/udaan/Footer";
 
@@ -69,6 +70,7 @@ function Index() {
           <Glimpse2026 />
 
         </main>
+        <FloatingYoutube />
         <Footer />
         <Toaster position="top-center" richColors />
       </div>
