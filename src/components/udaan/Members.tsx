@@ -86,6 +86,19 @@ export function Members() {
     return () => window.removeEventListener("hashchange", syncTabFromHash);
   }, []);
 
+  useEffect(() => {
+  const changeTab = (event: Event) => {
+    const customEvent = event as CustomEvent<string>;
+    setActiveTab(customEvent.detail);
+  };
+
+  window.addEventListener("member-tab-change", changeTab);
+
+  return () => {
+    window.removeEventListener("member-tab-change", changeTab);
+  };
+}, []);
+
   const handleTabClick = (nextTab: keyof typeof dataMap) => {
     setActiveTab(nextTab);
     window.history.replaceState(null, "", `#${nextTab}`);
@@ -137,12 +150,12 @@ export function Members() {
         </div>
 
         {/* Hash anchors for navbar dropdown links */}
-        <div id="chief" className="block h-0 scroll-mt-28" />
+        {/* <div id="chief" className="block h-0 scroll-mt-28" />
         <div id="patrons" className="block h-0 scroll-mt-28" />
         <div id="advisory" className="block h-0 scroll-mt-28" />
         <div id="faculty" className="block h-0 scroll-mt-28" />
         <div id="students" className="block h-0 scroll-mt-28" />
-        <div id="jury" className="block h-0 scroll-mt-28" />
+        <div id="jury" className="block h-0 scroll-mt-28" /> */}
 
         {/* Section label */}
         <div className="mt-10 mb-6">

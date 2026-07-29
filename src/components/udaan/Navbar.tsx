@@ -108,6 +108,28 @@ export function Navbar() {
     }
   };
 
+  const handleMemberClick = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  tab: string
+) => {
+  e.preventDefault();
+
+  // Scroll to Members section
+  const membersSection = document.getElementById("members");
+
+  membersSection?.scrollIntoView({
+    behavior: "auto",
+  });
+
+  // Tell Members.tsx which tab to open
+  window.dispatchEvent(
+    new CustomEvent("member-tab-change", {
+      detail: tab,
+    })
+  );
+};
+
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
@@ -232,11 +254,10 @@ export function Navbar() {
         key={group.id}
         className="group/item relative"
       >
-        <a
-          href={`#${group.id}`}
-          onClick={(e) => handleScroll(e, `#${group.id}`)}
-          className="flex items-center justify-between px-5 py-3 hover:bg-black/5 text-black"
-        >
+      <a
+        href="#members"
+        onClick={(e) => handleMemberClick(e, group.id)}
+      >
           <div className="flex items-center gap-3">
             <Icon
               size={17}
