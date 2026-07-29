@@ -10,7 +10,6 @@ const guidelines = [
     items: [
       "Each team can have a maximum of 3 student members and a mentor (optional)",
       "Open to all undergraduate and postgraduate students",
-      "₹500 per team",
       "Registration: 28th July 2026 - 16th August 2026",
     ],
   },
@@ -33,9 +32,9 @@ const guidelines = [
     iconColor: "text-green-400",
     bgColor: "bg-green-500/20",
     items: [
-       "Keep the Payment deteils after sucessful payment",
-      "You'll receive a confirmation email if shortlisted",
-      "Competition updates and announcements",
+     "You will receive a confirmation email if your team is shortlisted.",
+"If selected, your team will be required to pay a registration fee of ₹500 per team.",
+"You will receive competition updates and important announcements."
     ],
   },
 ];
