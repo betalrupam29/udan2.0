@@ -48,6 +48,7 @@ const links = [
 const downloadItems = [
   { label: "Download Brochure", href: "/documents/brochure.pdf" },
   { label: "Download Theme", href: "/documents/SDG_Mapping (1).pdf" },
+  { label: "Download Schedule", href: "#" },
 ];
 
 const memberGroups = [
@@ -107,27 +108,6 @@ export function Navbar() {
       element.scrollIntoView({ behavior: "auto" });
     }
   };
-
-  const handleMemberClick = (
-  e: React.MouseEvent<HTMLAnchorElement>,
-  tab: string
-) => {
-  e.preventDefault();
-
-  // Scroll to Members section
-  const membersSection = document.getElementById("members");
-
-  membersSection?.scrollIntoView({
-    behavior: "auto",
-  });
-
-  // Tell Members.tsx which tab to open
-  window.dispatchEvent(
-    new CustomEvent("member-tab-change", {
-      detail: tab,
-    })
-  );
-};
 
 
   useEffect(() => {
@@ -217,7 +197,6 @@ export function Navbar() {
 
             {/* Members Dropdown */}
             <div className="relative group">
-
               <button
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-black/5"
               >
@@ -230,92 +209,92 @@ export function Navbar() {
               </button>
 
               <div
-  className="
-    invisible opacity-0 translate-y-3
-    group-hover:visible
-    group-hover:opacity-100
-    group-hover:translate-y-0
-    absolute top-full left-0 mt-2
-    w-60
-    rounded-2xl
-    border border-black/10
-    bg-[#EAD8B7]
-    shadow-xl
-    transition-all
-    duration-300
-    z-50
-  "
->
-  {memberGroups.map((group) => {
-    const Icon = group.icon;
+                className="
+                  invisible opacity-0 translate-y-3
+                  group-hover:visible
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  absolute top-full left-0 mt-2
+                  w-60
+                  rounded-2xl
+                  border border-black/10
+                  bg-[#EAD8B7]
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  z-50
+                "
+              >
+                {memberGroups.map((group) => {
+                  const Icon = group.icon;
 
-    return (
-      <div
-        key={group.id}
-        className="group/item relative"
-      >
-      <a
-        href="#members"
-        onClick={(e) => handleMemberClick(e, group.id)}
-      >
-          <div className="flex items-center gap-3">
-            <Icon
-              size={17}
-              className={group.color}
-            />
+                  return (
+                    <div
+                      key={group.id}
+                      className="group/item relative"
+                    >
+                      <a
+                        href={`#${group.id}`}
+                        onClick={(e) => handleScroll(e, `#${group.id}`)}
+                        className="flex items-center justify-between px-5 py-3 hover:bg-black/5 text-black"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Icon
+                            size={17}
+                            className={group.color}
+                          />
 
-            <span className="text-sm font-semibold">
-              {group.label}
-            </span>
-          </div>
+                          <span className="text-sm font-semibold">
+                            {group.label}
+                          </span>
+                        </div>
 
-          <ChevronRight size={15} />
-        </a>
+                        <ChevronRight size={15} />
+                      </a>
 
-        {/* Flyout */}
-        <div
-          className="
-            absolute left-full top-0 ml-2
-            w-80
-            max-h-[70vh]
-            overflow-y-auto
-            rounded-2xl
-            border border-black/10
-            bg-[#EAD8B7]
-            shadow-xl
+                      {/* Flyout */}
+                      <div
+                        className="
+                          absolute left-full top-0 ml-2
+                          w-80
+                          max-h-[70vh]
+                          overflow-y-auto
+                          rounded-2xl
+                          border border-black/10
+                          bg-[#EAD8B7]
+                          shadow-xl
 
-            opacity-0
-            invisible
-            translate-x-2
+                          opacity-0
+                          invisible
+                          translate-x-2
 
-            transition-all
-            duration-200
+                          transition-all
+                          duration-200
 
-            group-hover/item:opacity-100
-            group-hover/item:visible
-            group-hover/item:translate-x-0
-          "
-        >
-          {group.members.map((member) => (
-            <div
-              key={member.name}
-              className="px-4 py-3 border-b border-black/10 last:border-0 hover:bg-black/5"
-            >
-              <p className="font-semibold text-sm text-black">
-                {member.name}
-              </p>
+                          group-hover/item:opacity-100
+                          group-hover/item:visible
+                          group-hover/item:translate-x-0
+                        "
+                      >
+                        {group.members.map((member) => (
+                          <div
+                            key={member.name}
+                            className="px-4 py-3 border-b border-black/10 last:border-0 hover:bg-black/5"
+                          >
+                            <p className="font-semibold text-sm text-black">
+                              {member.name}
+                            </p>
 
-              <p className="text-xs text-black/60 mt-1 leading-relaxed">
-                {member.role}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  })}
-</div>
-
+                            <p className="text-xs text-black/60 mt-1 leading-relaxed">
+                              {member.role}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {links.slice(7).map((link) => {
