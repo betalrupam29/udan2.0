@@ -53,16 +53,10 @@ export const faculty = [
 ];
 
 export const studentVolunteers = [
+  {name: "Indranil Kundu",role:"Student Convener, Innovation Council,4th Year, Department of Information Technology (IT),Heritage Institute of Technology, Kolkata"},
   { name: "Rupam Betal", role: "Information Technology" },
   { name: "Animesh Manna", role: "Information Technology" },
   { name: "Suptotthita Mahapatra", role: "Electronics & Communication Engineering" },
-  { name: "Rahul Singh", role: "Computer Science & Business System" },
-  { name: "Sneha Roy", role: "Civil Engineering" },
-  { name: "Ankit Kumar", role: "Chemical Engineering" },
-  { name: "Sourav Ghosh", role: "Chemical Engineering" },
-  { name: "Ananya Chakraborty", role: "Computer Science & Engineering" },
-  { name: "Debjit Mondal", role: "Information Technology" },
-  { name: "Ishita Sen", role: "Computer Science & Engineering (Artificial Intelligence & Machine Learning)" },
 ];
 
 export const juryMembers = [
