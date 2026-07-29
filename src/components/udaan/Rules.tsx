@@ -19,6 +19,7 @@ const faqs = [
   { q: "What should be the team composition?", a: "Each team can have a maximum of 3 members including one team leader. The team leader will be the primary point of contact. Teams can have members from different colleges and disciplines." },
   { q: "Can I participate individually?", a: "Yes, you can participate individually, but we encourage forming teams for diverse perspectives and skills. Individual participants can register as a team of one." },
   { q: "Can team members be from different colleges?", a: "Yes, team members can be from different colleges and institutions. However, if any team member is from outside HITK, the team will be considered as external participants and need to pay the registration fee." },
+  { q: "What will happen on 26 August?", a: "On 26 August, the hackathon/competition will occur where teams will present their prototypes and business models. On 27 August, the prize distribution ceremony will take place." },
 ];
 
 export function Rules() {
