@@ -55,20 +55,17 @@ export default function Glimpse2026() {
             Event Highlights
           </h2>
 
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <div className="aspect-video">
-             <iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/A7pOE7c78Bg?autoplay=1&mute=1&playsinline=1&loop=1&playlist=A7pOE7c78Bg"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-/>
-            </div>
-          </div>
+         <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+  <div className="relative w-full pt-[56.25%]">
+    <iframe
+      className="absolute inset-0 h-full w-full"
+      src="https://www.youtube.com/embed/A7pOE7c78Bg?autoplay=1&mute=1&playsinline=1&rel=0"
+      title="UDAAN Highlights"
+      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+</div>
         </motion.div>
 
         {/* ================= Journey ================= */}
