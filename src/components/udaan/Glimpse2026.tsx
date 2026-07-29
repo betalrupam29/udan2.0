@@ -59,7 +59,7 @@ export default function Glimpse2026() {
             <div className="aspect-video">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/A7pOE7c78Bg?rel=0"
+                src="https://www.youtube.com/embed/A7pOE7c78Bg?autoplay=1&mute=1&rel=0"
                 title="UDAAN Highlights"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
