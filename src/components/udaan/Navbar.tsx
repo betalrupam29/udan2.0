@@ -318,7 +318,7 @@ export function Navbar() {
 
             </div>
 
-            {links.slice(6).map((link) => {
+            {links.slice(7).map((link) => {
               const Icon = link.icon;
 
               return (
