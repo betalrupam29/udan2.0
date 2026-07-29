@@ -22,6 +22,7 @@ import {
   Crown,
   Star,
   Shield,
+  PlayCircle,
 } from "lucide-react";
 import { Logos } from "./Logo";
 
@@ -43,6 +44,7 @@ const links = [
   { href: "#awards", label: "Awards", icon: Trophy },
   { href: "#faq", label: "FAQ", icon: HelpCircle },
   { href: "#contact", label: "Contact", icon: Mail },
+  { href: "#glimpse", label: "Glimpses 2026", icon: PlayCircle },
 ];
 
 const downloadItems = [
@@ -135,7 +137,7 @@ export function Navbar() {
           {/* Desktop Navbar */}
           <nav className="hidden xl:flex flex-grow items-center gap-2 justify-start">
 
-            {links.slice(0, 7).map((link) => {
+            {links.slice(0, 8).map((link) => {
               const Icon = link.icon;
 
               return (
@@ -297,7 +299,7 @@ export function Navbar() {
 
             </div>
 
-            {links.slice(6).map((link) => {
+            {links.slice(7).map((link) => {
               const Icon = link.icon;
 
               return (
