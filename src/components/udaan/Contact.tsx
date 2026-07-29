@@ -34,8 +34,8 @@ export function Contact() {
 
             <div className="flex items-center gap-4">
               <Phone className="text-gold-light shrink-0" size={24} />
-              <a href="tel:+919123074188" className="text-white/80 hover:text-white transition-colors text-sm sm:text-base">
-                +91-
+              <a href="tel:+917908359282" className="text-white/80 hover:text-white transition-colors text-sm sm:text-base">
+                +91-7908359282
               </a>
             </div>
           </div>
