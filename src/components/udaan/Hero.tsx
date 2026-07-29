@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-3 glass-dark border border-white/10 rounded-2xl p-6"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Glimpse of Udaan 2025</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Glimpses of Udaan 2025</h3>
             <p className="text-white/70 text-base mb-4 leading-relaxed">
               Watch the highlights from the previous edition of UDAAN and experience the innovation and excitement.
             </p>
