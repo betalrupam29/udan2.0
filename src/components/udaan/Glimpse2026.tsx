@@ -44,29 +44,29 @@ export default function Glimpse2026() {
         </motion.div>
 
         {/* ================= Video ================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h2 className="text-center text-4xl font-bold mb-8">
-            Event Highlights
-          </h2>
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="mt-20"
+>
+  <h2 className="text-center text-4xl font-bold mb-8">
+    Event Highlights
+  </h2>
 
-         <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-  <div className="relative w-full pt-[56.25%]">
+  <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
     <iframe
-      className="absolute inset-0 h-full w-full"
+      className="block w-full aspect-video"
       src="https://www.youtube.com/embed/A7pOE7c78Bg?autoplay=1&mute=1&playsinline=1&rel=0"
       title="UDAAN Highlights"
-      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
       allowFullScreen
     />
   </div>
-</div>
-        </motion.div>
+</motion.div>
 
         {/* ================= Journey ================= */}
         <motion.div
