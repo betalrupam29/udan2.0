@@ -44,7 +44,7 @@ const links = [
   { href: "#awards", label: "Awards", icon: Trophy },
   { href: "#faq", label: "FAQ", icon: HelpCircle },
   { href: "#contact", label: "Contact", icon: Mail },
-  { href: "#glimpse", label: "Glimpses 2026", icon: PlayCircle },
+  { href: "#glimpse", label: "Glimpses 2025", icon: PlayCircle },
 ];
 
 const downloadItems = [
