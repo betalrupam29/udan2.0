@@ -43,11 +43,7 @@ function Index() {
   return (
     <div className="relative min-h-screen overflow-x-hidden hero-radial text-white">
       {/* Global particles — one layer for the entire page */}
-<<<<<<< HEAD
-      {/*<Particles count={40} />*/}
-=======
-      {/* <Particles count={40} /> */}
->>>>>>> 77002db0e151ecc3979bb8e6c72e137be2f60dc9
+{/* <Particles count={40} /> */}
 
       {/* Global floating orbs scattered down the page */}
       <div className="pointer-events-none fixed -top-20 -left-20 h-96 w-96 rounded-full bg-gold/15 blur-3xl animate-float-slow" />
