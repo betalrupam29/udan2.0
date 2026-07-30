@@ -125,7 +125,7 @@ export function Navbar() {
     // Scroll to Members section
     document
       .getElementById("members")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      ?.scrollIntoView({ behavior: "auto", block: "start" });
 
     history.replaceState(null, "", href);
     return;
@@ -135,7 +135,7 @@ export function Navbar() {
   const element = document.querySelector(href);
   if (element) {
     element.scrollIntoView({
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
     });
   }
@@ -168,7 +168,7 @@ export function Navbar() {
           {/* Desktop Navbar */}
           <nav className="hidden xl:flex flex-grow items-center gap-2 justify-start">
 
-            {links.slice(0, 8).map((link) => {
+            {links.slice(0, 7).map((link) => {
               const Icon = link.icon;
 
               return (
