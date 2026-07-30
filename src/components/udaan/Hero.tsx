@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Monitor, Users, Download, CheckCircle2, CalendarClock, Youtube } from "lucide-react";
 import PaymentRegister from "./PaymentRegister";
+import FloatingYoutube from "./FloatingYoutube";
 
 
 const info = [
@@ -27,21 +28,26 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-3 glass-dark border border-white/10 rounded-2xl p-6"
-          >
+            className="lg:col-span-4 glass-dark border border-white/10 rounded-2xl p-6"          >
             <h3 className="text-3xl font-bold text-white mb-4">Glimpses of Udaan 2025</h3>
-            <p className="text-white/70 text-lg mb-4 leading-relaxed">
-              Watch the highlights from the previous edition of UDAAN and experience the innovation and excitement.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=A7pOE7c78Bg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-base transition-colors duration-200"
-            >
-              <Youtube size={20} />
-              Watch on YouTube
-            </a>
+                      <p className="text-white/70 text-lg mb-4 leading-relaxed">
+            Watch the highlights from the previous edition of UDAAN.
+          </p>
+
+          {/* Floating YouTube Preview */}
+          <div className="mb-5 overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+            <FloatingYoutube/>
+          </div>
+
+          <a
+            href="https://www.youtube.com/watch?v=A7pOE7c78Bg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-red-600 px-4 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-red-700"
+          >
+            <Youtube size={20} />
+            Watch on YouTube
+          </a>
           </motion.div>
 
           {/* Center: Main Content */}
@@ -49,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 text-center"
+            className="lg:col-span-5 text-center"
           >
             <div className="space-y-4 text-center">
               {/* Largest: Main Heading */}
