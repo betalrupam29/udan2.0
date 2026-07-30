@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-4 glass-dark border border-white/10 rounded-2xl p-6"          >
+            className="order-2 lg:order-1 lg:col-span-4 glass-dark border border-white/10 rounded-2xl p-6"          >
             <h3 className="text-3xl font-bold text-white mb-4">Glimpses of Udaan 2025</h3>
                       <p className="text-white/70 text-lg mb-4 leading-relaxed">
             Watch the highlights from the previous edition of UDAAN.
@@ -55,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-5 text-center"
+            className="order-1 lg:order-2 lg:col-span-5 text-center"
           >
             <div className="space-y-4 text-center">
               {/* Largest: Main Heading */}
@@ -98,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-3 glass-dark border border-white/10 rounded-2xl p-6"
+            className="order-3 lg:order-3 lg:col-span-3 glass-dark border border-white/10 rounded-2xl p-6"
           >
             <h3 className="text-3xl font-bold text-white mb-4">Event Details</h3>
             <div className="space-y-4">
