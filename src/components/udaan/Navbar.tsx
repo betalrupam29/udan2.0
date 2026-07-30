@@ -103,14 +103,43 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [memberOpen, setMemberOpen] = useState(false);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "auto" });
-    }
-  };
+ const handleScroll = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+) => {
+  e.preventDefault();
 
+  // Members dropdown
+  if (
+    ["#chief", "#patrons", "#advisory", "#faculty", "#students", "#jury"].includes(href)
+  ) {
+    const tab = href.replace("#", "");
+
+    // Open the correct tab
+    window.dispatchEvent(
+      new CustomEvent("member-tab-change", {
+        detail: tab,
+      })
+    );
+
+    // Scroll to Members section
+    document
+      .getElementById("members")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    history.replaceState(null, "", href);
+    return;
+  }
+
+  // Normal navigation
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);

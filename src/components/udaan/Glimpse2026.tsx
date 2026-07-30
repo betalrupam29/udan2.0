@@ -22,11 +22,11 @@ export default function Glimpse2026() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 text-cyan-300 font-medium">
             <Calendar className="w-4 h-4" />
-            UDAAN 2026
+            UDAAN 2025
           </span>
 
           <h1 className="mt-6 text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
-            Glimpse 2026
+            Glimpse 2025
           </h1>
 
           <p className="mt-8 max-w-4xl mx-auto text-lg leading-8 text-gray-300">
