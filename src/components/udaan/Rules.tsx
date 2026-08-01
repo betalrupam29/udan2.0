@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const rules = [
   { q: "Team Size", a: "Maximum 3 members per team. Cross-institution teams are permitted." },
-  { q: "Registration", a: "Registration is mandatory for every participant on the team." },
+  { q: "Registration", a: "Team leaders are required to complete registration for all team members." },
   { q: "Registration Fee", a: "Selected teams will pay ₹500 per team at the time of registration." },
   { q: "Original Prototype", a: "Only original, previously unpublished prototypes are allowed. Plagiarism results in disqualification." },
   { q: "Reporting Time", a: "Teams must report on time as per the published schedule on both days." },
