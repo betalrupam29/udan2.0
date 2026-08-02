@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, FileImage, FileText } from "lucide-react";
+import { Download, FileImage, FileText, File } from "lucide-react";
 
 const cards = [
   {
@@ -34,6 +34,20 @@ const cards = [
     href: "/documents/SDG_Mapping (1).pdf",
     download: "UDAAN2_Theme_SDG_Mapping.pdf",
   },
+    {
+      id: "template",
+      icon: File,
+      iconColor: "text-green-400",
+      glowColor: "from-green-500/20 via-transparent to-transparent",
+      borderHover: "hover:border-green-400/50",
+      label: "Submission Template",
+      title: "Download Submission Template",
+      description: "Get the template document to prepare your submission.",
+      buttonText: "Download Template",
+      buttonClass: "bg-green-400/10 hover:bg-green-400/20 border border-green-400/30 hover:border-green-400/60 text-green-300",
+      href: "/documents/Template.docx",
+      download: "Template.docx",
+    },
 ];
 
 export function DownloadSection() {

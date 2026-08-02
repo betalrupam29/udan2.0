@@ -50,6 +50,7 @@ const links = [
 const downloadItems = [
   { label: "Download Brochure", href: "/documents/brochure.pdf" },
   { label: "Download Theme", href: "/documents/SDG_Mapping (1).pdf" },
+  { label: "Download Template", href: "/documents/Template.docx" },
   { label: "Download Schedule", href: "#" },
 ];
 
