@@ -460,7 +460,7 @@ export function Navbar() {
                       setOpen(false);
                     }} className="flex items-center gap-3 py-2.5 text-black">
                       <UserCog size={17} className="text-green-600" />
-                      <span className="text-sm font-semibold">Faculty Coordinator</span>
+                      <span className="text-sm font-semibold">Faculty Coordinator </span>
                     </a>
                     <a href="#students" onClick={(e) => {
                       handleScroll(e, "#students");
